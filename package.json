@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "homepage": "https://marcus-rise.dev/",
   "license": "UNLICENSED",
-  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
