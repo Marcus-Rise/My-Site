@@ -1,0 +1,65 @@
+{
+  "name": "my-site",
+  "version": "0.1.0",
+  "homepage": "https://marcus-rise.dev/",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next export",
+    "start": "next start",
+    "serve": "serve out -p 5000"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.5.2",
+    "@material-ui/icons": "^4.5.1",
+    "@zeit/next-sass": "^1.0.1",
+    "next": "9.1.2",
+    "next-offline": "^4.0.6",
+    "react": "16.11.0",
+    "react-dom": "16.11.0",
+    "react-lazy-load-image-component": "^1.3.2",
+    "typeface-roboto": "^0.0.75"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^4.3.3",
+    "@types/jest": "24.0.21",
+    "@types/node": "12.12.5",
+    "@types/react": "16.9.11",
+    "@types/react-dom": "16.9.3",
+    "@typescript-eslint/eslint-plugin": "^2.6.0",
+    "@typescript-eslint/parser": "^2.6.0",
+    "@zeit/next-css": "^1.0.1",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-app": "^6.0.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "node-sass": "^4.13.0",
+    "prettier": "^1.18.2",
+    "terser-webpack-plugin": "^2.2.1",
+    "typescript": "^3.6.4",
+    "webpack": "^4.41.2",
+    "mini-css-extract-plugin": "latest"
+  }
+}
