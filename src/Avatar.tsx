@@ -1,12 +1,11 @@
 import React from "react";
-// @ts-ignore
-import { LazyLoadImage } from "react-lazy-load-image-component";
+// import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 export const Avatar: React.FC<{ size: number; alt: string }> = props => (
-  <LazyLoadImage
+  <img
     alt={props.alt}
-    effect="blur"
+    // effect="blur"
     height={props.size}
     width={props.size}
     sizes="(max-width: 914px) 10vw, 200px"
