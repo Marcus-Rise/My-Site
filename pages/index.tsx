@@ -4,8 +4,6 @@ import SkillsChips from "../src/SkillsChips";
 import LinksIcons from "../src/LinksIcons";
 import { Box, Grid } from "@material-ui/core";
 
-export const config = { amp: true };
-
 const Index: React.FC = () => (
   <Box>
     <Grid

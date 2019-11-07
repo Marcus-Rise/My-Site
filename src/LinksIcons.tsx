@@ -9,10 +9,10 @@ const useStyles = makeStyles((theme: Theme) =>
       }
     }
     /*iconHover: {
-            '&:hover': {
-                color: red[800],
-            },
-        },*/
+                '&:hover': {
+                    color: red[800],
+                },
+            },*/
   })
 );
 
@@ -39,13 +39,18 @@ const LinksIcons: React.FC = () => {
           width={iconSize}
         />
       </a>
-      {/* <a
-        href="https://samara.hh.ru/resume/7232b828ff05dbba540039ed1f53346a556638"
+      <a
+        href="https://github.com/ilyakonstantinov95"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src={hh} alt="hh link" height={iconSize} width={iconSize} />
-      </a>*/}
+        <img
+          src="/github.svg"
+          alt="github link"
+          height={iconSize}
+          width={iconSize}
+        />
+      </a>
       <a
         href="https://gitlab.com/marcus_rise"
         target="_blank"
