@@ -40,7 +40,7 @@ const LinksIcons: React.FC = () => {
         />
       </a>
       <a
-        href="https://github.com/ilyakonstantinov95"
+        href="https://github.com/Marcus-Rise"
         target="_blank"
         rel="noopener noreferrer"
       >
