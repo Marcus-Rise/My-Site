@@ -63,6 +63,18 @@ const LinksIcons: React.FC = () => {
           width={iconSize}
         />
       </a>
+      <a
+        href="https://www.npmjs.com/~marcus-rise"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="/npmjs.png"
+          alt="npmjs link"
+          height={iconSize}
+          width={iconSize}
+        />
+      </a>
     </Grid>
   );
 };
