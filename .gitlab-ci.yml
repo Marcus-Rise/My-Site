@@ -1,6 +1,6 @@
 stages:
   - install
-  - analize
+  - audit
   - build
   - deploy
 
@@ -24,21 +24,8 @@ install:
   script:
     - npm ci
 
-lint:
-  stage: analize
-  dependencies:
-    - install
-  cache:
-    <<: *global_cache
-    policy: pull
-  only:
-    changes:
-      - src/**/*
-  script:
-    - npm run lint
-
 audit:
-  stage: analize
+  stage: audit
   dependencies:
     - install
   cache:
@@ -54,7 +41,6 @@ audit:
 build:
   stage: build
   dependencies:
-    - lint
     - audit
   cache:
     <<: *global_cache
