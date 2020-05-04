@@ -54,7 +54,8 @@ audit:
 build:
   stage: build
   dependencies:
-    - analize
+    - lint
+    - audit
   cache:
     <<: *global_cache
     policy: pull
