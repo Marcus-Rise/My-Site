@@ -40,7 +40,7 @@ const LinksIcons: React.FC = () => {
         />
       </a>
       <a
-        href="https://github.com/ilyakonstantinov95"
+        href="https://github.com/Marcus-Rise"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -59,6 +59,18 @@ const LinksIcons: React.FC = () => {
         <img
           src="/gitlab.svg"
           alt="gitlab link"
+          height={iconSize}
+          width={iconSize}
+        />
+      </a>
+      <a
+        href="https://www.npmjs.com/~marcus-rise"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="/npmjs.png"
+          alt="npmjs link"
           height={iconSize}
           width={iconSize}
         />
