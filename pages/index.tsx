@@ -14,7 +14,7 @@ const Index: React.FC = () => (
     >
       <ProfileCard
         title="Ilya Konstantinov"
-        subTitle="Senior Frontend Web Developer"
+        subTitle="Lead Front End Web Developer"
         imgSize={150}
       >
         <br />
