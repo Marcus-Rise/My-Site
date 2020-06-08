@@ -1,23 +1,41 @@
 import React from "react";
 import { createStyles, Grid, makeStyles, Theme } from "@material-ui/core";
+import { ILink, LinkIcon } from "./LinkIcon";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       "& > a": {
-        margin: theme.spacing(2)
-      }
-    }
-    /*iconHover: {
-                '&:hover': {
-                    color: red[800],
-                },
-            },*/
+        margin: theme.spacing(2),
+      },
+    },
   })
 );
 
+const links: ILink[] = [
+  {
+    linkHref: "https://t.me/MarcusRise",
+    imgSrc: "/telegram.svg",
+    altText: "telegram",
+  },
+  {
+    linkHref: "https://github.com/Marcus-Rise",
+    imgSrc: "/github.svg",
+    altText: "github",
+  },
+  {
+    linkHref: "https://gitlab.com/marcus_rise",
+    imgSrc: "/gitlab.svg",
+    altText: "gitlab",
+  },
+  {
+    linkHref: "https://www.npmjs.com/~marcus-rise",
+    imgSrc: "/npmjs.png",
+    altText: "npmjs",
+  },
+];
+
 const LinksIcons: React.FC = () => {
-  const iconSize = 25;
   const classes = useStyles();
 
   return (
@@ -27,54 +45,9 @@ const LinksIcons: React.FC = () => {
       alignItems="center"
       className={classes.root}
     >
-      <a
-        href="https://t.me/MarcusRise"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          src="/telegram.svg"
-          alt="telegram link"
-          height={iconSize}
-          width={iconSize}
-        />
-      </a>
-      <a
-        href="https://github.com/Marcus-Rise"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          src="/github.svg"
-          alt="github link"
-          height={iconSize}
-          width={iconSize}
-        />
-      </a>
-      <a
-        href="https://gitlab.com/marcus_rise"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          src="/gitlab.svg"
-          alt="gitlab link"
-          height={iconSize}
-          width={iconSize}
-        />
-      </a>
-      <a
-        href="https://www.npmjs.com/~marcus-rise"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          src="/npmjs.png"
-          alt="npmjs link"
-          height={iconSize}
-          width={iconSize}
-        />
-      </a>
+      {links.map((i) => (
+        <LinkIcon linkHref={i.linkHref} imgSrc={i.imgSrc} altText={i.altText} />
+      ))}
     </Grid>
   );
 };
