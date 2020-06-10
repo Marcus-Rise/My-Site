@@ -46,7 +46,12 @@ const LinksIcons: React.FC = () => {
       className={classes.root}
     >
       {links.map((i) => (
-        <LinkIcon linkHref={i.linkHref} imgSrc={i.imgSrc} altText={i.altText} />
+        <LinkIcon
+          linkHref={i.linkHref}
+          imgSrc={i.imgSrc}
+          altText={i.altText}
+          key={i.altText}
+        />
       ))}
     </Grid>
   );
