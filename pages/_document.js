@@ -3,7 +3,7 @@ import Document, { Head, Main, NextScript } from "next/document";
 import { ServerStyleSheets } from "@material-ui/core/styles";
 import theme from "../src/theme";
 import "typeface-roboto";
-import { title, description, keywords } from "./seo";
+import { title, description, keywords } from "../src/seo";
 
 export default class MyDocument extends Document {
   render() {
