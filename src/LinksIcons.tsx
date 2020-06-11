@@ -19,6 +19,11 @@ const links: ILink[] = [
     altText: "telegram",
   },
   {
+    linkHref: "https://twitter.com/ilykonst95",
+    imgSrc: "/twitter.png",
+    altText: "twitter",
+  },
+  {
     linkHref: "https://github.com/Marcus-Rise",
     imgSrc: "/github.svg",
     altText: "github",
