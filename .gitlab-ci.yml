@@ -1,6 +1,6 @@
 stages:
   - build
-  - release
+  - deploy
 
 services:
   - docker:dind
@@ -19,7 +19,8 @@ build:
 
 pages:
   stage: deploy
-  cache: {}
+  dependencies:
+    - build
   script:
     - rm -rf public
     - mv dist public
