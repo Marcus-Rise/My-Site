@@ -1,64 +1,28 @@
 stages:
-  - install
-  - audit
   - build
-  - deploy
+  - release
 
-image: node:12
+services:
+  - docker:dind
 
-cache: &global_cache
-  key: node_modules_cache
-  paths:
-    - node_modules/
-  policy: pull-push
-
-install:
-  stage: install
-  cache:
-    # inherit all global cache settings
-    <<: *global_cache
-    policy: push
-  only:
-    changes:
-      - package-lock.json
-  script:
-    - npm ci
-
-audit:
-  stage: audit
-  dependencies:
-    - install
-  cache:
-    <<: *global_cache
-    policy: pull
-  only:
-    changes:
-      - package-lock.json
-  script:
-    - npm audit
-  allow_failure: true
+before_script:
+  - export DOCKER_BUILDKIT=1
 
 build:
+  image: docker
   stage: build
-  dependencies:
-    - audit
-  cache:
-    <<: *global_cache
-    policy: pull
   script:
-    - npm run build
-    - npm run export
+    - docker build -o dist .
   artifacts:
     paths:
-      - out
+      - dist
 
 pages:
   stage: deploy
   cache: {}
   script:
     - rm -rf public
-    - mv out public
-    - find public -type f -regex '.*\.\(htm\|html\|txt\|text\|js\|css\)$' -exec gzip -f -k {} \;
+    - mv dist public
   artifacts:
     paths:
       - public # mandatory, other folder won't work
