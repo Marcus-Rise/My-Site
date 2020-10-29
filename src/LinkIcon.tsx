@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export interface ILink {
   linkHref: string;
@@ -11,12 +12,7 @@ export const LinkIcon: React.FC<ILink> = (props) => {
 
   return (
     <a href={props.linkHref} target="_blank" rel="noopener noreferrer">
-      <img
-        src={props.imgSrc}
-        alt={props.altText}
-        height={iconSize}
-        width={iconSize}
-      />
+      <Image src={props.imgSrc} alt={props.altText} height={iconSize} width={iconSize} />
     </a>
   );
 };

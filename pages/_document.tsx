@@ -1,30 +1,12 @@
 import React from "react";
 import Document, { Head, Main, NextScript } from "next/document";
 import { ServerStyleSheets } from "@material-ui/core/styles";
-import theme from "../src/theme";
-import "typeface-roboto";
-import { title, description, keywords } from "../src/seo";
 
 export default class MyDocument extends Document {
-  render() {
+  render(): JSX.Element {
     return (
       <html lang="en">
-        <Head>
-          <meta charSet="utf-8" />
-          <meta
-            name="viewport"
-            content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
-          />
-          {/* PWA primary color */}
-          <meta name="theme-color" content={theme.palette.background.default} />
-          <meta name="title" content={title} />
-          <meta name="description" content={description} />
-          <meta name="keywords" content={keywords} />
-          {/*<link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-          />*/}
-        </Head>
+        <Head />
         <body>
           <Main />
           <NextScript />
@@ -71,9 +53,6 @@ MyDocument.getInitialProps = async (ctx) => {
   return {
     ...initialProps,
     // Styles fragment is rendered after the app and page rendering finish.
-    styles: [
-      ...React.Children.toArray(initialProps.styles),
-      sheets.getStyleElement(),
-    ],
+    styles: [...React.Children.toArray(initialProps.styles), sheets.getStyleElement()],
   };
 };

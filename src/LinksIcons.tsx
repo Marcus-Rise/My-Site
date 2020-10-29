@@ -1,6 +1,8 @@
 import React from "react";
-import { createStyles, Grid, makeStyles, Theme } from "@material-ui/core";
-import { ILink, LinkIcon } from "./LinkIcon";
+import type { Theme } from "@material-ui/core";
+import { createStyles, Grid, makeStyles } from "@material-ui/core";
+import type { ILink } from "./LinkIcon";
+import { LinkIcon } from "./LinkIcon";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -9,7 +11,7 @@ const useStyles = makeStyles((theme: Theme) =>
         margin: theme.spacing(2),
       },
     },
-  })
+  }),
 );
 
 const links: ILink[] = [
@@ -44,19 +46,9 @@ const LinksIcons: React.FC = () => {
   const classes = useStyles();
 
   return (
-    <Grid
-      container
-      justify="center"
-      alignItems="center"
-      className={classes.root}
-    >
+    <Grid container justify="center" alignItems="center" className={classes.root}>
       {links.map((i) => (
-        <LinkIcon
-          linkHref={i.linkHref}
-          imgSrc={i.imgSrc}
-          altText={i.altText}
-          key={i.altText}
-        />
+        <LinkIcon linkHref={i.linkHref} imgSrc={i.imgSrc} altText={i.altText} key={i.altText} />
       ))}
     </Grid>
   );

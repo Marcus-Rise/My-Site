@@ -1,16 +1,24 @@
-FROM node:14 AS base
+ARG NODE_VERSION=14
 
+FROM node:${NODE_VERSION} AS dev
+WORKDIR /app
+USER node
+
+CMD npm i --quiet \
+    && npx next telemetry --disable \
+    && npm run dev
+
+FROM node:${NODE_VERSION}-alpine AS build
 WORKDIR /app
 
-FROM base AS node_modules
-
 COPY package*.json ./
-
 RUN npm ci
 
-FROM node_modules AS build
-
-COPY ./ .
+COPY ./pages ./pages
+COPY ./public ./public
+COPY ./src ./src
+COPY ./*.js* ./
+COPY ./*.ts* ./
 
 RUN npm run build
 RUN npm run export
