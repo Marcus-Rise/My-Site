@@ -16,7 +16,6 @@ export default class MyApp extends App {
         <Head>
           <title>{title}</title>
           <meta charSet="utf-8" />
-          <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no" />
           {/* PWA primary color */}
           <meta name="theme-color" content={theme.palette.background.default} />
           <meta name="title" content={title} />
