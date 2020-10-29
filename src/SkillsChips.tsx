@@ -1,7 +1,8 @@
 import React from "react";
-import { Chip, createStyles, Grid, makeStyles, Theme } from "@material-ui/core";
+import type { Theme } from "@material-ui/core";
+import { Chip, createStyles, Grid, makeStyles } from "@material-ui/core";
 
-const skills: string[] = [
+const skills: readonly string[] = [
   "OOP",
   "Typescript",
   "Unit Testing",
@@ -31,7 +32,7 @@ const useStyles = makeStyles((theme: Theme) =>
         margin: theme.spacing(0.5),
       },
     },
-  })
+  }),
 );
 
 const SkillsChips: React.FC = () => {
@@ -39,13 +40,7 @@ const SkillsChips: React.FC = () => {
   const skillsList = skills.map((item) => <Chip key={item} label={item} />);
 
   return (
-    <Grid
-      container
-      justify="center"
-      alignItems="center"
-      wrap="wrap"
-      className={classes.root}
-    >
+    <Grid container justify="center" alignItems="center" wrap="wrap" className={classes.root}>
       {skillsList}
     </Grid>
   );

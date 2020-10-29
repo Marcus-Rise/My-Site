@@ -1,30 +1,38 @@
 module.exports = {
-  env: {
-    browser: true,
-    es6: true,
+  parser: "@typescript-eslint/parser", // Specifies the ESLint parser
+  parserOptions: {
+    ecmaVersion: 2020, // Allows for the parsing of modern ECMAScript features
+    sourceType: "module", // Allows for the use of imports
+    ecmaFeatures: {
+      jsx: true, // Allows for the parsing of JSX
+    },
+  },
+  plugins: ["@typescript-eslint/eslint-plugin"],
+  settings: {
+    react: {
+      version: "detect", // Tells eslint-plugin-react to automatically detect the version of React to use
+    },
   },
   extends: [
+    "plugin:react/recommended", // Uses the recommended rules from @eslint-plugin-react
+    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "react-app",
-    "plugin:prettier/recommended",
+    "prettier",
+    "prettier/@typescript-eslint",
+    "plugin:react-hooks/recommended",
   ],
-  globals: {
-    Atomics: "readonly",
-    SharedArrayBuffer: "readonly",
+  root: true,
+  env: {
+    node: true,
+    jest: true,
   },
-  parser: "@typescript-eslint/parser",
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 2018,
-    sourceType: "module",
-  },
-  plugins: ["@typescript-eslint", "react"],
   rules: {
-    "@typescript-eslint/interface-name-prefix": [
-      "error",
-      { prefixWithI: "always" },
-    ],
+    // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
+    // e.g. "@typescript-eslint/explicit-function-return-type": "off",
+    "react/prop-types": "off",
+    // "@typescript-eslint/explicit-function-return-type": "off",
+    // "@typescript-eslint/no-explicit-any": "off",
+    "newline-before-return": "error",
+    "@typescript-eslint/consistent-type-imports": "error",
   },
 };
