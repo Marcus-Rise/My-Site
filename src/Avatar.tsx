@@ -1,5 +1,4 @@
 import React from "react";
-import "react-lazy-load-image-component/src/effects/blur.css";
 import Image from "next/image";
 import { useAmp } from "next/amp";
 
