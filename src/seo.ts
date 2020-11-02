@@ -6,6 +6,7 @@ export const keywords: string = new Array<string>(
   "VueJs",
   "NodeJs",
   "Nginx",
+  "Docker",
   "Web",
   "Developer",
   "Samara",
