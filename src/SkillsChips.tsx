@@ -1,29 +1,7 @@
 import React from "react";
 import type { Theme } from "@material-ui/core";
 import { Chip, createStyles, Grid, makeStyles } from "@material-ui/core";
-
-const skills: readonly string[] = [
-  "OOP",
-  "Typescript",
-  "Unit Testing",
-  "VueJs",
-  "ReactJs",
-  "SPA",
-  "PWA",
-  "Webpack",
-  "Sass",
-  "PostCSS",
-  "Pug",
-  "NodeJs",
-  "Express",
-  "NestJs",
-  "SSR",
-  "Electron",
-  "Docker",
-  "Nginx",
-  "Git Flow",
-  "Scrum",
-];
+import { skills } from "./skills.array";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
