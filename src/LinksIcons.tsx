@@ -25,7 +25,7 @@ const links: ILink[] = [
     linkHref: "https://gitlab.com/marcus_rise",
     imgSrc: "/gitlab.svg",
     altText: "gitlab",
-    size: 25,
+    size: 20,
   },
   {
     linkHref: "https://github.com/Marcus-Rise",
@@ -37,13 +37,13 @@ const links: ILink[] = [
     linkHref: "https://www.npmjs.com/~marcus-rise",
     imgSrc: "/npmjs.png",
     altText: "npmjs",
-    size: 20,
+    size: 17,
   },
   {
     linkHref: "https://twitter.com/ilykonst95",
     imgSrc: "/twitter.png",
     altText: "twitter",
-    size: 30,
+    size: 20,
   },
 ];
 
