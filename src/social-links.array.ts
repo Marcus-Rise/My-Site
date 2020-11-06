@@ -3,31 +3,31 @@ import type { ILink } from "./LinkIcon";
 const socialLinks: readonly ILink[] = [
   {
     linkHref: "https://t.me/MarcusRise",
-    imgSrc: "/telegram.svg",
+    imgSrc: "/icons/telegram.svg",
     altText: "telegram",
     size: 20,
   },
   {
     linkHref: "https://gitlab.com/marcus_rise",
-    imgSrc: "/gitlab.svg",
+    imgSrc: "/icons/gitlab.svg",
     altText: "gitlab",
     size: 20,
   },
   {
     linkHref: "https://github.com/Marcus-Rise",
-    imgSrc: "/github.svg",
+    imgSrc: "/icons/github.svg",
     altText: "github",
     size: 35,
   },
   {
     linkHref: "https://www.npmjs.com/~marcus-rise",
-    imgSrc: "/npmjs.png",
+    imgSrc: "/icons/npmjs.png",
     altText: "npmjs",
     size: 17,
   },
   {
     linkHref: "https://twitter.com/ilykonst95",
-    imgSrc: "/twitter.png",
+    imgSrc: "/icons/twitter.png",
     altText: "twitter",
     size: 20,
   },
