@@ -7,6 +7,7 @@ declare namespace JSX {
     width?: string | number;
     height?: string | number;
     layout?: Layout;
+    className?: unknown;
   }
 
   interface IntrinsicElements {
