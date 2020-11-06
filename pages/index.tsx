@@ -1,31 +1,61 @@
 import React from "react";
-import { ProfileCard } from "../src/ProfileCard";
 import { SkillsChips } from "../src/SkillsChips";
 import { LinksIcons } from "../src/LinksIcons";
-import { Box, Grid } from "@material-ui/core";
+import { Box, Card, CardContent, Grid, Typography } from "@material-ui/core";
 import { skills } from "../src/skills.array";
 import { socialLinks } from "../src/social-links.array";
+import { description, title } from "../src/seo";
+import type { ILink } from "../src/LinkIcon";
+import { Avatar } from "../src/Avatar";
+import type { GetStaticProps } from "next";
 
 const config = { amp: "hybrid" };
 
-const Index: React.FC = () => {
+interface IProps {
+  skills: readonly string[];
+  socialLinks: readonly ILink[];
+  title: string;
+  description: string;
+  imgSize: string | number;
+  imgSrc: string;
+}
+
+const getStaticProps: GetStaticProps<IProps> = async () => ({
+  props: {
+    title,
+    description,
+    skills,
+    socialLinks,
+    imgSize: 150,
+    imgSrc: "/profile-cropped/profile-cropped_ngn5s8_c_scale,w_914-min.png",
+  },
+});
+
+const Index: React.FC<IProps> = (props) => {
   return (
     <Box>
       <Grid container justify="center" alignItems="center" style={{ height: "100vh" }}>
-        <ProfileCard
-          title="Ilya Konstantinov"
-          subTitle="Lead Front End Web Developer"
-          imgSrc={"/profile-cropped/profile-cropped_ngn5s8_c_scale,w_914-min.png"}
-          imgSize={150}
-        >
-          <br />
-          <SkillsChips skills={skills} />
-          <LinksIcons items={socialLinks} />
-        </ProfileCard>
+        <Card style={{ maxWidth: "350px" }}>
+          <CardContent>
+            <Grid container justify="center" alignItems="center">
+              <Avatar src={props.imgSrc} size={props.imgSize} alt={props.title} />
+            </Grid>
+            <br />
+            <Typography align="center" variant="h5" component="h1">
+              {props.title}
+            </Typography>
+            <Typography align="center" variant="body2" component="p" color="textSecondary">
+              {props.description}
+            </Typography>
+            <br />
+            <SkillsChips skills={skills} />
+            <LinksIcons items={socialLinks} />
+          </CardContent>
+        </Card>
       </Grid>
     </Box>
   );
 };
 
 export default Index;
-export { config };
+export { config, getStaticProps };
