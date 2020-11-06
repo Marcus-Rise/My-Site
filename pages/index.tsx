@@ -27,7 +27,7 @@ const getStaticProps: GetStaticProps<IProps> = async () => ({
     skills,
     socialLinks,
     imgSize: 150,
-    imgSrc: "/profile-cropped.png",
+    imgSrc: "/img/profile-cropped.png",
   },
 });
 
