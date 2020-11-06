@@ -1,7 +1,6 @@
 import React from "react";
 import type { Theme } from "@material-ui/core";
 import { Chip, createStyles, Grid, makeStyles } from "@material-ui/core";
-import { skills } from "./skills.array";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -13,9 +12,13 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const SkillsChips: React.FC = () => {
+interface IProps {
+  skills: readonly string[];
+}
+
+const SkillsChips: React.FC<Readonly<IProps>> = (props) => {
   const classes = useStyles();
-  const skillsList = skills.map((item) => <Chip key={item} label={item} />);
+  const skillsList = props.skills.map((item) => <Chip key={item} label={item} />);
 
   return (
     <Grid container justify="center" alignItems="center" wrap="wrap" className={classes.root}>
@@ -24,4 +27,4 @@ const SkillsChips: React.FC = () => {
   );
 };
 
-export default SkillsChips;
+export { SkillsChips };

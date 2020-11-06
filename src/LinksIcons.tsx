@@ -14,49 +14,20 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const links: ILink[] = [
-  {
-    linkHref: "https://t.me/MarcusRise",
-    imgSrc: "/telegram.svg",
-    altText: "telegram",
-    size: 20,
-  },
-  {
-    linkHref: "https://gitlab.com/marcus_rise",
-    imgSrc: "/gitlab.svg",
-    altText: "gitlab",
-    size: 20,
-  },
-  {
-    linkHref: "https://github.com/Marcus-Rise",
-    imgSrc: "/github.svg",
-    altText: "github",
-    size: 35,
-  },
-  {
-    linkHref: "https://www.npmjs.com/~marcus-rise",
-    imgSrc: "/npmjs.png",
-    altText: "npmjs",
-    size: 17,
-  },
-  {
-    linkHref: "https://twitter.com/ilykonst95",
-    imgSrc: "/twitter.png",
-    altText: "twitter",
-    size: 20,
-  },
-];
+interface IProps {
+  items: readonly ILink[];
+}
 
-const LinksIcons: React.FC = () => {
+const LinksIcons: React.FC<Readonly<IProps>> = (props) => {
   const classes = useStyles();
 
   return (
     <Grid container justify="center" alignItems="center" className={classes.root}>
-      {links.map((i) => (
+      {props.items.map((i) => (
         <LinkIcon linkHref={i.linkHref} imgSrc={i.imgSrc} altText={i.altText} key={i.altText} size={i.size} />
       ))}
     </Grid>
   );
 };
 
-export default LinksIcons;
+export { LinksIcons };

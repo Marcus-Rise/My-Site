@@ -2,14 +2,14 @@ import React from "react";
 import Image from "next/image";
 import { useAmp } from "next/amp";
 
-export interface ILink {
+interface ILink {
   linkHref: string;
   imgSrc: string;
   altText: string;
   size: number | string;
 }
 
-export const LinkIcon: React.FC<ILink> = (props) => {
+const LinkIcon: React.FC<Readonly<ILink>> = (props) => {
   const isAmp = useAmp();
 
   return (
@@ -24,3 +24,6 @@ export const LinkIcon: React.FC<ILink> = (props) => {
     </a>
   );
 };
+
+export { LinkIcon };
+export type { ILink };
