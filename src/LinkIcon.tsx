@@ -15,9 +15,7 @@ const LinkIcon: React.FC<Readonly<ILink>> = (props) => {
   return (
     <a href={props.linkHref} target="_blank" rel="noopener noreferrer">
       {isAmp ? (
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        <amp-img height={props.size} width={props.size} src={props.imgSrc} alt={props.altText} layout="responsive" />
+        <amp-img height={props.size} width={props.size} src={props.imgSrc} alt={props.altText} layout={"fixed"} />
       ) : (
         <Image src={props.imgSrc} alt={props.altText} height={props.size} width={props.size} />
       )}
