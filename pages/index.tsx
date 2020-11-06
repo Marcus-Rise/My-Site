@@ -6,7 +6,7 @@ import { skills } from "../src/skills.array";
 import { socialLinks } from "../src/social-links.array";
 import { description, title } from "../src/seo";
 import type { ILink } from "../src/LinkIcon";
-import { Avatar } from "../src/Avatar";
+import { Avatar } from "../src/avatar/avatar.component";
 import type { GetStaticProps } from "next";
 
 const config = { amp: "hybrid" };
@@ -27,7 +27,7 @@ const getStaticProps: GetStaticProps<IProps> = async () => ({
     skills,
     socialLinks,
     imgSize: 150,
-    imgSrc: "/profile-cropped/profile-cropped_ngn5s8_c_scale,w_914-min.png",
+    imgSrc: "/img/profile-cropped.png",
   },
 });
 
