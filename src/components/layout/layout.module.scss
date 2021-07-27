@@ -1,0 +1,11 @@
+.root {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-background-theme);
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,6 +1,9 @@
-import type { ILink } from "./LinkIcon";
-
-const socialLinks: readonly ILink[] = [
+const socialLinks: ReadonlyArray<{
+  linkHref: string;
+  imgSrc: string;
+  altText: string;
+  size: number;
+}> = [
   {
     linkHref: "https://t.me/MarcusRise",
     imgSrc: "/icons/telegram.svg",

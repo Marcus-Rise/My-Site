@@ -1,7 +1,6 @@
 {
   "name": "my-site",
   "version": "0.1.0",
-  "homepage": "https://marcus-rise.dev/",
   "license": "UNLICENSED",
   "scripts": {
     "dev": "next dev",
@@ -10,12 +9,10 @@
     "start": "next start"
   },
   "dependencies": {
-    "@material-ui/core": "^4.11.0",
-    "@material-ui/icons": "^4.9.1",
-    "next": "^10.0.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "typeface-roboto": "^1.1.13"
+    "classnames": "^2.3.1",
+    "next": "^11.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "browserslist": {
     "production": [
@@ -30,18 +27,16 @@
     ]
   },
   "devDependencies": {
-    "@types/node": "^14.14.6",
-    "@types/react": "^16.9.56",
-    "@types/react-dom": "^16.9.9",
-    "@typescript-eslint/eslint-plugin": "^4.6.1",
-    "@typescript-eslint/parser": "^4.6.1",
-    "eslint": "^7.12.1",
-    "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-react": "^7.21.5",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "prettier": "^2.1.2",
-    "sass": "^1.29.0",
-    "typescript": "^4.0.5"
+    "@types/node": "^14.17.6",
+    "@types/react": "^17.0.15",
+    "@types/react-dom": "^17.0.9",
+    "@typescript-eslint/eslint-plugin": "^4.28.5",
+    "eslint": "7.31.0",
+    "eslint-config-next": "11.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.2",
+    "sass": "^1.36.0",
+    "typescript": "^4.3.5"
   }
 }
