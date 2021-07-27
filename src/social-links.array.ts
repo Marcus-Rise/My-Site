@@ -2,6 +2,7 @@ import telegram from "../public/icons/telegram.svg";
 import gitlab from "../public/icons/gitlab.svg";
 import github from "../public/icons/github.svg";
 import npmjs from "../public/icons/npmjs.png";
+import twitter from "../public/icons/npmjs.png";
 
 const socialLinks: ReadonlyArray<{
   linkHref: string;
@@ -33,12 +34,12 @@ const socialLinks: ReadonlyArray<{
     altText: "npmjs",
     size: 17,
   },
-  // {
-  //   linkHref: "https://twitter.com/ilykonst95",
-  //   imgSrc: twitter,
-  //   altText: "twitter",
-  //   size: 20,
-  // },
+  {
+    linkHref: "https://twitter.com/ilykonst95",
+    imgSrc: twitter,
+    altText: "twitter",
+    size: 20,
+  },
 ];
 
 export { socialLinks };
