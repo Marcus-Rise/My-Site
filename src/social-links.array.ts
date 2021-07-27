@@ -38,7 +38,7 @@ const socialLinks: ReadonlyArray<{
     linkHref: "https://twitter.com/ilykonst95",
     imgSrc: twitter,
     altText: "twitter",
-    size: 20,
+    size: 25,
   },
 ];
 
