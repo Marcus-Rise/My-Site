@@ -2,7 +2,7 @@ import telegram from "../public/icons/telegram.svg";
 import gitlab from "../public/icons/gitlab.svg";
 import github from "../public/icons/github.svg";
 import npmjs from "../public/icons/npmjs.png";
-import twitter from "../public/icons/npmjs.png";
+import twitter from "../public/icons/twitter.png";
 
 const socialLinks: ReadonlyArray<{
   linkHref: string;
