@@ -4,6 +4,7 @@ export const skills: readonly string[] = [
   "Unit Testing",
   "VueJs",
   "ReactJs",
+  "NextJs",
   "SPA",
   "PWA",
   "Webpack",
