@@ -14,7 +14,7 @@ const socialLinks: ReadonlyArray<{
     linkHref: "https://t.me/MarcusRise",
     imgSrc: telegram,
     altText: "telegram",
-    size: 23,
+    size: 25,
   },
   {
     linkHref: "https://gitlab.com/marcus_rise",
