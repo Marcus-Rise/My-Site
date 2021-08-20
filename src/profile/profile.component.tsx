@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import React from "react";
 import { Avatar, Card, Center, Chip, SocialLink } from "../components";
-import avatar from "../../public/img/profile-cropped.png";
+import avatar from "../../public/img/profile.jpg";
 import { socialLinks } from "../social-links.array";
 import { skills } from "../skills.array";
 import styles from "./profile.module.scss";
