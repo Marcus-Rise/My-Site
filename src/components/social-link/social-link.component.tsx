@@ -19,7 +19,17 @@ const SocialLink: FC<ISocialLinkProps> = ({ className, linkHref, size, imgSrc, a
       {isAmp ? (
         <amp-img height={size} width={size} src={imgSrc} alt={altText} layout={"fixed"} />
       ) : (
-        <Image src={imgSrc} alt={altText} height={size} width={size} />
+        <Image
+          src={imgSrc}
+          alt={altText}
+          height={size}
+          width={size}
+          placeholder={"blur"}
+          blurDataURL={
+            "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNcXw8AAeMBMA+N6mYAAAAASUVORK5CYII="
+          }
+          quality={25}
+        />
       )}
     </a>
   );
