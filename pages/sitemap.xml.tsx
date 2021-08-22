@@ -10,7 +10,7 @@ const getSiteMap = (host: string): string =>
   `;
 
 const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
-  const host = String(req.headers.host);
+  const host = "https://" + String(req.headers.host);
   const sitemap = getSiteMap(host);
 
   res.setHeader("Content-Type", "application/xml");
