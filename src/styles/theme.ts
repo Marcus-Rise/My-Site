@@ -18,7 +18,7 @@ const createTheme = (theme: Partial<DefaultTheme>): DefaultTheme => {
 const darkTheme = createTheme({
   backgroundTheme: "#272b2f",
   backgroundPrimary: "#8a90ab78",
-  backgroundSecondary: "#272b2f",
+  backgroundSecondary: "#7a818c",
   textPrimary: "#fff",
   textSecondary: "#e7e6e6c7",
 });
