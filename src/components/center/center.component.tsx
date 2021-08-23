@@ -1,21 +1,14 @@
-import type { FC } from "react";
-import styles from "./center.module.scss";
-import classNames from "classnames";
+import styled from "styled-components";
 
 interface ICenterProps {
-  wrap?: boolean;
-  splash?: boolean;
+  wrapItems?: boolean;
 }
 
-const Center: FC<ICenterProps> = ({ splash, wrap, children }) => (
-  <div
-    className={classNames(styles.root, {
-      [styles.wrap]: wrap,
-      [styles.splash]: splash,
-    })}
-  >
-    {children}
-  </div>
-);
+const Center = styled.div<ICenterProps>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: ${(props) => (!!props.wrapItems ? "wrap" : "inherit")};
+`;
 
 export { Center };

@@ -30,7 +30,7 @@ const Profile: FC<IProfileProps> = ({ title, description }) => (
     <h1 className={styles.title}>{title}</h1>
     <p className={styles.description}>{description}</p>
     <br />
-    <Center wrap>{Skills}</Center>
+    <Center wrapItems>{Skills}</Center>
     <br />
     <Center>{Links}</Center>
     <br />
