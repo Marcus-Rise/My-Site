@@ -54,14 +54,12 @@ const Theme: FC = ({ children }) => {
   }, [preferences]);
 
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <ThemeToggleProvider onClick={toggleTheme} title={title}>
-          {icon}
-        </ThemeToggleProvider>
-        {children}
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={theme}>
+      <ThemeToggleProvider onClick={toggleTheme} title={title}>
+        {icon}
+      </ThemeToggleProvider>
+      {children}
+    </ThemeProvider>
   );
 };
 
