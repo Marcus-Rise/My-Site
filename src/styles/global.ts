@@ -8,6 +8,7 @@ const GlobalStyles = createGlobalStyle`
   body {
     margin: 0;
     height: 100%;
+    background-color: ${(props) => props.theme.backgroundTheme};
   }
 
   #__next {
