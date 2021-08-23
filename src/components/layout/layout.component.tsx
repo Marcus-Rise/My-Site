@@ -1,7 +1,9 @@
 import type { FC } from "react";
-import { useCallback, useMemo, useState } from "react";
-import { darkTheme, defaultTheme, GlobalStyles } from "../../styles";
+import { useMemo } from "react";
+import { GlobalStyles } from "../../styles";
 import styled, { css, ThemeProvider } from "styled-components";
+import { ThemePreferencesEnum, useTheme } from "./theme.hook";
+import dynamic from "next/dynamic";
 
 interface ILayoutProps {
   center?: boolean;
@@ -45,23 +47,29 @@ const ThemeToggle = styled.button`
   }
 `;
 
+const ThemeToggleProvider = dynamic(async () => ThemeToggle, { ssr: false });
+
 const Layout: FC<ILayoutProps> = ({ center, children }) => {
-  const [theme, setTheme] = useState(defaultTheme);
+  const { theme, preferences, toggleTheme } = useTheme();
 
-  const toggleTheme = useCallback(() => {
-    if (theme === defaultTheme) {
-      setTheme(darkTheme);
-    } else {
-      setTheme(defaultTheme);
+  const preferencesIcon = useMemo(() => {
+    switch (preferences) {
+      case ThemePreferencesEnum.LIGHT: {
+        return "☀︎";
+      }
+      case ThemePreferencesEnum.DARK: {
+        return "☾";
+      }
+      case ThemePreferencesEnum.SYSTEM: {
+        return "⌽";
+      }
     }
-  }, [theme]);
-
-  const themeText = useMemo(() => (theme === defaultTheme ? "☀︎" : "☾"), [theme]);
+  }, [preferences]);
 
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <ThemeToggle onClick={toggleTheme}>{themeText}</ThemeToggle>
+      <ThemeToggleProvider onClick={toggleTheme}>{preferencesIcon}</ThemeToggleProvider>
       <Main center={center}>{children}</Main>
     </ThemeProvider>
   );
