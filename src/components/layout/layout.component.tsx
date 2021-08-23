@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { darkTheme, defaultTheme, GlobalStyles } from "../../styles";
 import styled, { css, ThemeProvider } from "styled-components";
 
@@ -23,6 +23,28 @@ const Main = styled.main<{
     `}
 `;
 
+const ThemeToggle = styled.button`
+  background-color: ${({ theme }) => theme.backgroundSecondary};
+  border: none;
+  border-radius: 100%;
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 1rem;
+  padding: 0.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  color: ${({ theme }) => theme.textPrimary};
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
 const Layout: FC<ILayoutProps> = ({ center, children }) => {
   const [theme, setTheme] = useState(defaultTheme);
 
@@ -34,10 +56,12 @@ const Layout: FC<ILayoutProps> = ({ center, children }) => {
     }
   }, [theme]);
 
+  const themeText = useMemo(() => (theme === defaultTheme ? "☀︎" : "☾"), [theme]);
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <button onClick={toggleTheme}>toggle theme</button>
+      <ThemeToggle onClick={toggleTheme}>{themeText}</ThemeToggle>
       <Main center={center}>{children}</Main>
     </ThemeProvider>
   );
