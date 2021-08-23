@@ -1,6 +1,7 @@
 import type { DefaultTheme } from "styled-components";
 
 const defaultTheme: DefaultTheme = {
+  isDark: false,
   backgroundTheme: "#445768",
   backgroundPrimary: "#fff",
   backgroundSecondary: "rgb(224,224,224)",
@@ -16,6 +17,7 @@ const createTheme = (theme: Partial<DefaultTheme>): DefaultTheme => {
 };
 
 const darkTheme = createTheme({
+  isDark: true,
   backgroundTheme: "#272b2f",
   backgroundPrimary: "#8a90ab78",
   backgroundSecondary: "#7a818c",
