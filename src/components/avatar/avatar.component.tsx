@@ -2,7 +2,7 @@ import type { FC } from "react";
 import React from "react";
 import Image from "next/image";
 import { useAmp } from "next/amp";
-import styles from "./avatar.module.scss";
+import styled from "styled-components";
 
 interface IAvatarProps {
   size: number | string;
@@ -10,14 +10,19 @@ interface IAvatarProps {
   src: any;
 }
 
+const ImageStyled = styled.img`
+  object-fit: cover;
+  border-radius: 100%;
+`;
+
 const Avatar: FC<IAvatarProps> = ({ alt, size, src }) => {
   const isAmp = useAmp();
 
   return isAmp ? (
     <amp-img height={size} width={size} src={src} alt={alt} layout={"fixed"} />
   ) : (
-    <Image
-      className={styles.root}
+    <ImageStyled
+      as={Image}
       alt={alt}
       height={size}
       width={size}
