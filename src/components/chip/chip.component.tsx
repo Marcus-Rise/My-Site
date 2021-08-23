@@ -10,7 +10,7 @@ interface IChipProps {
 }
 
 const Chip = styled.span<IChipProps>`
-  background-color: #e0e0e0;
+  background-color: ${({ theme }) => theme.backgroundSecondary};
   border-radius: 1.5rem;
   padding: 0.5rem 0.75rem;
   letter-spacing: 0.14994px;
