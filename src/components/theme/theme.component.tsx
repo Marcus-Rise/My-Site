@@ -31,24 +31,34 @@ const ThemeToggleProvider = dynamic(async () => ThemeToggle, { ssr: false });
 const Theme: FC = ({ children }) => {
   const { theme, preferences, toggleTheme } = useTheme();
 
-  const preferencesIcon = useMemo(() => {
+  const { icon, title } = useMemo(() => {
+    let meta: { icon: string; title: string };
+
     switch (preferences) {
       case ThemePreferencesEnum.LIGHT: {
-        return "☀︎";
+        meta = { title: "Light", icon: "☀︎" };
+        break;
       }
       case ThemePreferencesEnum.DARK: {
-        return "☾";
+        meta = { title: "Dark", icon: "☾" };
+        break;
       }
-      case ThemePreferencesEnum.SYSTEM: {
-        return "⌽";
+      case ThemePreferencesEnum.SYSTEM:
+      default: {
+        meta = { title: "System", icon: "⌽" };
+        break;
       }
     }
+
+    return meta;
   }, [preferences]);
 
   return (
     <>
       <ThemeProvider theme={theme}>
-        <ThemeToggleProvider onClick={toggleTheme}>{preferencesIcon}</ThemeToggleProvider>
+        <ThemeToggleProvider onClick={toggleTheme} title={title}>
+          {icon}
+        </ThemeToggleProvider>
         {children}
       </ThemeProvider>
     </>
