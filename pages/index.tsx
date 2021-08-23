@@ -4,25 +4,8 @@ import { description, keywords, title } from "../src/seo";
 import { Profile } from "../src/profile";
 import Head from "next/head";
 import { Layout } from "../src/components";
-import type { GetStaticProps } from "next";
 
-interface IHomeProps {
-  title: string;
-  description: string;
-  keywords: string;
-}
-
-const getStaticProps: GetStaticProps<IHomeProps> = () => {
-  return {
-    props: {
-      title,
-      description,
-      keywords,
-    },
-  };
-};
-
-const Home: FC<IHomeProps> = ({ title, description, keywords }) => (
+const Home: FC = () => (
   <>
     <Head>
       <title>{title}</title>
@@ -42,4 +25,3 @@ const Home: FC<IHomeProps> = ({ title, description, keywords }) => (
 );
 
 export default Home;
-export { getStaticProps };
