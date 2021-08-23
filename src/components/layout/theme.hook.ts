@@ -1,38 +1,12 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { darkTheme, defaultTheme } from "../../styles";
-
-enum ThemePreferencesEnum {
-  DARK = "dark",
-  LIGHT = "light",
-  SYSTEM = "system",
-}
-
-type Theme = ThemePreferencesEnum | string;
-
-const THEME_PREFERENCES_STORAGE_KEY = "THEME_PREFERENCES";
-
-const usePreferences = (): [Theme, (theme: Theme) => void] => {
-  const [preferences, setPreferences] = useState<Theme>(() => {
-    try {
-      const restoredPreferences = localStorage.getItem(THEME_PREFERENCES_STORAGE_KEY);
-
-      return restoredPreferences ?? ThemePreferencesEnum.SYSTEM;
-    } catch {
-      return ThemePreferencesEnum.SYSTEM;
-    }
-  });
-
-  const savePreferences = useCallback((data: Theme) => {
-    setPreferences(data);
-    localStorage.setItem(THEME_PREFERENCES_STORAGE_KEY, data);
-  }, []);
-
-  return [preferences, savePreferences];
-};
+import { ThemePreferencesEnum, useThemePreferences } from "./theme-preferences.hook";
+import { useThemeSystemDark } from "./theme-system–dark.hook";
 
 const useTheme = () => {
-  const [preferences, savePreferences] = usePreferences();
   const [isDark, setIsDark] = useState(false);
+  const [preferences, savePreferences] = useThemePreferences();
+  const isThemeSystemDark = useThemeSystemDark();
 
   const toggleTheme = useCallback(() => {
     switch (preferences) {
@@ -52,28 +26,14 @@ const useTheme = () => {
   }, [preferences, savePreferences]);
 
   useEffect(() => {
-    setIsDark(preferences === ThemePreferencesEnum.DARK);
-  }, [preferences]);
-
-  useEffect(() => {
-    const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    const eventName = "change";
-    const eventListener = (event: MediaQueryListEvent) => {
-      if (preferences === ThemePreferencesEnum.SYSTEM) {
-        setIsDark(event.matches);
-      }
-    };
-
     if (preferences === ThemePreferencesEnum.SYSTEM) {
-      setIsDark(darkModeQuery.matches);
-
-      darkModeQuery.addEventListener(eventName, eventListener);
+      setIsDark(isThemeSystemDark);
     } else {
-      darkModeQuery.removeEventListener(eventName, eventListener);
+      setIsDark(preferences === ThemePreferencesEnum.DARK);
     }
-  }, [preferences]);
+  }, [isThemeSystemDark, preferences]);
 
-  const theme = isDark ? darkTheme : defaultTheme;
+  const theme = useMemo(() => (isDark ? darkTheme : defaultTheme), [isDark]);
 
   return {
     theme,
