@@ -13,6 +13,7 @@ interface IAvatarProps {
 const ImageStyled = styled.img`
   object-fit: cover;
   border-radius: 100%;
+  filter: brightness(130%) !important;
 `;
 
 const Avatar: FC<IAvatarProps> = ({ alt, size, src }) => {
