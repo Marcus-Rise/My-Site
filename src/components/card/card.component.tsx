@@ -1,6 +1,11 @@
-import type { FC } from "react";
-import styles from "./card.module.scss";
+import styled from "styled-components";
 
-const Card: FC = ({ children }) => <div className={styles.root}>{children}</div>;
+const Card = styled.div`
+  background-color: ${({ theme }) => theme.backgroundPrimary};
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
+  max-width: 350px;
+  box-sizing: border-box;
+`;
 
 export { Card };

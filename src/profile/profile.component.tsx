@@ -4,16 +4,27 @@ import { Avatar, Card, Center, Chip, SocialLink } from "../components";
 import avatar from "../../public/img/profile.jpg";
 import { socialLinks } from "../social-links.array";
 import { skills } from "../skills.array";
-import styles from "./profile.module.scss";
+import styled from "styled-components";
+
+const Link = styled.a`
+  margin: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 const Links = socialLinks.map(({ altText, imgSrc, linkHref, size }) => (
-  <SocialLink className={styles.link} linkHref={linkHref} imgSrc={imgSrc} altText={altText} key={altText} size={size} />
+  <Link as={SocialLink} linkHref={linkHref} imgSrc={imgSrc} altText={altText} key={altText} size={size} />
 ));
 
+const Skill = styled.span`
+  margin: 0.3rem 0.25rem;
+`;
+
 const Skills = skills.map((value) => (
-  <Chip className={styles.skill} key={value}>
+  <Skill as={Chip} key={value}>
     {value}
-  </Chip>
+  </Skill>
 ));
 
 interface IProfileProps {
@@ -21,16 +32,32 @@ interface IProfileProps {
   title: string;
 }
 
+const Title = styled.h1`
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+  line-height: 1.334;
+  letter-spacing: 0;
+`;
+
+const Description = styled.p`
+  color: ${({ theme }) => theme.textSecondary};
+  text-align: center;
+  margin: 0;
+  font-size: 0.9rem;
+`;
+
 const Profile: FC<IProfileProps> = ({ title, description }) => (
   <Card>
     <Center>
       <Avatar src={avatar} size={150} alt={title} />
     </Center>
     <br />
-    <h1 className={styles.title}>{title}</h1>
-    <p className={styles.description}>{description}</p>
+    <Title>{title}</Title>
+    <Description>{description}</Description>
     <br />
-    <Center wrap>{Skills}</Center>
+    <Center wrapItems>{Skills}</Center>
     <br />
     <Center>{Links}</Center>
     <br />

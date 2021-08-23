@@ -1,9 +1,6 @@
-import type { FC } from "react";
-import styles from "./chip.module.scss";
-import classNames from "classnames";
+import styled from "styled-components";
 
 enum ChipSizeEnum {
-  default,
   big,
 }
 
@@ -12,15 +9,15 @@ interface IChipProps {
   className?: string;
 }
 
-const Chip: FC<IChipProps> = ({ className, size = ChipSizeEnum.default, children }) => (
-  <span
-    className={classNames(styles.root, className, {
-      [styles.default]: size === ChipSizeEnum.default,
-      [styles.big]: size === ChipSizeEnum.big,
-    })}
-  >
-    {children}
-  </span>
-);
+const Chip = styled.span<IChipProps>`
+  background-color: ${({ theme }) => theme.backgroundSecondary};
+  border-radius: 1.5rem;
+  padding: 0.5rem 0.75rem;
+  letter-spacing: 0.14994px;
+  box-sizing: border-box;
+  color: ${({ theme }) => theme.textPrimary};
+  font-weight: 400;
+  font-size: ${({ size }) => (size === ChipSizeEnum.big ? "0.85rem" : "0.8rem")};
+`;
 
 export { Chip, ChipSizeEnum };

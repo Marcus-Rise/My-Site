@@ -6,8 +6,6 @@ import Head from "next/head";
 import { Layout } from "../src/components";
 import type { GetStaticProps } from "next";
 
-const config = { amp: "hybrid" };
-
 interface IHomeProps {
   title: string;
   description: string;
@@ -44,4 +42,4 @@ const Home: FC<IHomeProps> = ({ title, description, keywords }) => (
 );
 
 export default Home;
-export { config, getStaticProps };
+export { getStaticProps };
