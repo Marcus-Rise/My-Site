@@ -10,6 +10,7 @@ export const skills: readonly string[] = [
   "Webpack",
   "Sass",
   "PostCSS",
+  "Styled components",
   "Pug",
   "NodeJs",
   "Express",
