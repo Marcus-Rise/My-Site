@@ -3,6 +3,7 @@ import styled, { ThemeProvider } from "styled-components";
 import type { FC } from "react";
 import { useMemo } from "react";
 import { ThemePreferencesEnum, useTheme } from "./theme.hook";
+import Head from "next/head";
 
 const ThemeToggle = styled.button`
   background-color: ${({ theme }) => theme.backgroundSecondary};
@@ -54,12 +55,17 @@ const Theme: FC = ({ children }) => {
   }, [preferences]);
 
   return (
-    <ThemeProvider theme={theme}>
-      <ThemeToggleProvider onClick={toggleTheme} title={title}>
-        {icon}
-      </ThemeToggleProvider>
-      {children}
-    </ThemeProvider>
+    <>
+      <Head>
+        <meta name={"theme-color"} content={theme.backgroundPrimary} />
+      </Head>
+      <ThemeProvider theme={theme}>
+        <ThemeToggleProvider onClick={toggleTheme} title={title}>
+          {icon}
+        </ThemeToggleProvider>
+        {children}
+      </ThemeProvider>
+    </>
   );
 };
 
