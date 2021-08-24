@@ -13,7 +13,7 @@ interface IAvatarProps {
 const ImageStyled = styled.img`
   object-fit: cover;
   border-radius: 100%;
-  filter: brightness(${(props) => (props.theme.isDark ? 120 : 130)}%) !important;
+  filter: brightness(115%) !important;
 `;
 
 const Avatar: FC<IAvatarProps> = ({ alt, size, src }) => {
