@@ -6,7 +6,7 @@ import stackoverflow from "../public/icons/stackoverflow.png";
 
 const socialLinks: ReadonlyArray<{
   linkHref: string;
-  imgSrc: string;
+  imgSrc: string | StaticImageData;
   altText: string;
   size: number;
   removeMargin?: boolean;
