@@ -1,6 +1,6 @@
 import telegram from "../public/icons/telegram.svg";
-import gitlab from "../public/icons/gitlab.svg";
-import github from "../public/icons/github.svg";
+import habr from "../public/icons/harb.jpg";
+import github from "../public/icons/github.png";
 import npmjs from "../public/icons/npmjs.png";
 import stackoverflow from "../public/icons/stackoverflow.png";
 
@@ -9,6 +9,7 @@ const socialLinks: ReadonlyArray<{
   imgSrc: string;
   altText: string;
   size: number;
+  removeMargin?: boolean;
 }> = [
   {
     linkHref: "https://t.me/MarcusRise",
@@ -17,16 +18,17 @@ const socialLinks: ReadonlyArray<{
     size: 26,
   },
   {
-    linkHref: "https://gitlab.com/marcus_rise",
-    imgSrc: gitlab,
-    altText: "gitlab",
-    size: 25,
+    linkHref: "https://career.habr.com/macrus-rise",
+    imgSrc: habr,
+    altText: "habr",
+    size: 26,
   },
   {
     linkHref: "https://github.com/Marcus-Rise",
     imgSrc: github,
     altText: "github",
-    size: 35,
+    size: 60,
+    removeMargin: true,
   },
   {
     linkHref: "https://stackoverflow.com/users/story/8028101",

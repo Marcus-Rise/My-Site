@@ -15,7 +15,7 @@ const SocialLink: FC<ISocialLinkProps> = ({ className, linkHref, size, imgSrc, a
   const isAmp = useAmp();
 
   return (
-    <a className={className} href={linkHref} target="_blank" rel="noopener noreferrer">
+    <a className={className} href={linkHref} target="_blank" rel="noopener noreferrer" title={altText}>
       {isAmp ? (
         <amp-img height={size} width={size} src={imgSrc} alt={altText} layout={"fixed"} />
       ) : (

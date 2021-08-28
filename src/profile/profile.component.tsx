@@ -6,15 +6,23 @@ import { socialLinks } from "../social-links.array";
 import { skills } from "../skills.array";
 import styled from "styled-components";
 
-const Link = styled.a`
-  margin: 0 1rem;
+const Link = styled.a<{ removeMargin?: boolean }>`
+  margin: ${(props) => (props.removeMargin ? "0" : "0 1rem")};
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
-const Links = socialLinks.map(({ altText, imgSrc, linkHref, size }) => (
-  <Link as={SocialLink} linkHref={linkHref} imgSrc={imgSrc} altText={altText} key={altText} size={size} />
+const Links = socialLinks.map(({ altText, imgSrc, linkHref, size, removeMargin }) => (
+  <Link
+    as={SocialLink}
+    linkHref={linkHref}
+    imgSrc={imgSrc}
+    altText={altText}
+    key={altText}
+    size={size}
+    removeMargin={removeMargin}
+  />
 ));
 
 const Skill = styled.span`
