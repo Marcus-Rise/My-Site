@@ -1,46 +1,40 @@
-import telegram from "../public/icons/telegram.svg";
-import habr from "../public/icons/harb.jpg";
-import github from "../public/icons/github.png";
-import npmjs from "../public/icons/npmjs.png";
-import stackoverflow from "../public/icons/stackoverflow.png";
+import { Github, Habr, Npm, Stackoverflow, Telegram } from "./components/icons";
 
 const socialLinks: ReadonlyArray<{
-  linkHref: string;
-  imgSrc: string | StaticImageData;
-  altText: string;
+  href: string;
+  icon: Icon;
+  alt: string;
   size: number;
-  removeMargin?: boolean;
 }> = [
   {
-    linkHref: "https://t.me/MarcusRise",
-    imgSrc: telegram,
-    altText: "telegram",
-    size: 26,
+    href: "https://t.me/MarcusRise",
+    icon: Telegram,
+    alt: "telegram",
+    size: 30,
   },
   {
-    linkHref: "https://career.habr.com/macrus-rise",
-    imgSrc: habr,
-    altText: "habr",
-    size: 26,
+    href: "https://career.habr.com/macrus-rise",
+    icon: Habr,
+    alt: "habr",
+    size: 37,
   },
   {
-    linkHref: "https://github.com/Marcus-Rise",
-    imgSrc: github,
-    altText: "github",
-    size: 60,
-    removeMargin: true,
+    href: "https://github.com/Marcus-Rise",
+    icon: Github,
+    alt: "github",
+    size: 50,
   },
   {
-    linkHref: "https://stackoverflow.com/users/story/8028101",
-    imgSrc: stackoverflow,
-    altText: "stackoverflow",
-    size: 35,
+    href: "https://stackoverflow.com/users/story/8028101",
+    icon: Stackoverflow,
+    alt: "stackoverflow",
+    size: 30,
   },
   {
-    linkHref: "https://www.npmjs.com/~marcus-rise",
-    imgSrc: npmjs,
-    altText: "npmjs",
-    size: 23,
+    href: "https://www.npmjs.com/~marcus-rise",
+    icon: Npm,
+    alt: "npmjs",
+    size: 50,
   },
 ];
 

@@ -1,18 +1,31 @@
 import type { FC } from "react";
 import React from "react";
-import Image from "next/image";
+import styled, { css } from "styled-components";
 
 interface ISocialLinkProps {
-  linkHref: string;
-  imgSrc: string | StaticImageData;
-  altText: string;
+  href: string;
+  icon: Icon;
+  alt: string;
   size: number | string;
   className?: string;
 }
 
-const SocialLink: FC<ISocialLinkProps> = ({ className, linkHref, size, imgSrc, altText }) => (
-  <a className={className} href={linkHref} target="_blank" rel="noopener noreferrer" title={altText}>
-    <Image src={imgSrc} alt={altText} height={size} width={size} quality={25} />
+const Icon = styled.svg`
+  ${(props) => {
+    const color = props.theme.iconColor;
+
+    return css`
+      path {
+        stroke: ${color};
+        fill: ${color};
+      }
+    `;
+  }}
+`;
+
+const SocialLink: FC<ISocialLinkProps> = ({ className, href, size, icon, alt }) => (
+  <a className={className} href={href} target="_blank" rel="noopener noreferrer" title={alt}>
+    <Icon as={icon} width={size} height={size} className={className} />
   </a>
 );
 

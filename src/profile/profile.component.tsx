@@ -1,28 +1,13 @@
 import type { FC } from "react";
 import React from "react";
-import { Avatar, Card, Center, Chip, SocialLink } from "../components";
+import { Avatar, Card, Center, CenterYAlign, Chip, SocialLink } from "../components";
 import avatar from "../../public/img/profile.jpg";
 import { socialLinks } from "../social-links.array";
 import { skills } from "../skills.array";
 import styled from "styled-components";
 
-const Link = styled.a<{ removeMargin?: boolean }>`
-  margin: ${(props) => (props.removeMargin ? "0" : "0 1rem")};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-const Links = socialLinks.map(({ altText, imgSrc, linkHref, size, removeMargin }) => (
-  <Link
-    as={SocialLink}
-    linkHref={linkHref}
-    imgSrc={imgSrc}
-    altText={altText}
-    key={altText}
-    size={size}
-    removeMargin={removeMargin}
-  />
+const Links = socialLinks.map(({ alt, icon, href, size }) => (
+  <SocialLink href={href} icon={icon} alt={alt} key={alt} size={size} />
 ));
 
 const Skill = styled.span`
@@ -67,7 +52,7 @@ const Profile: FC<IProfileProps> = ({ title, description }) => (
     <br />
     <Center wrapItems>{Skills}</Center>
     <br />
-    <Center>{Links}</Center>
+    <Center yAlign={CenterYAlign.AROUND}>{Links}</Center>
     <br />
   </Card>
 );
