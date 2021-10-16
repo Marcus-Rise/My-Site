@@ -1,29 +1,20 @@
 import type { FC } from "react";
 import React from "react";
-import { Avatar, Card, Center, Chip, SocialLink } from "../components";
+import { Avatar, Card, Center, CenterYAlign, Chip } from "../components";
 import avatar from "../../public/img/profile.jpg";
 import { socialLinks } from "../social-links.array";
 import { skills } from "../skills.array";
 import styled from "styled-components";
 
-const Link = styled.a<{ removeMargin?: boolean }>`
-  margin: ${(props) => (props.removeMargin ? "0" : "0 1rem")};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
+const Links = socialLinks.map(({ alt, icon, href, size }) => {
+  const Icon = icon;
 
-const Links = socialLinks.map(({ altText, imgSrc, linkHref, size, removeMargin }) => (
-  <Link
-    as={SocialLink}
-    linkHref={linkHref}
-    imgSrc={imgSrc}
-    altText={altText}
-    key={altText}
-    size={size}
-    removeMargin={removeMargin}
-  />
-));
+  return (
+    <a key={alt} href={href} target="_blank" rel="noopener noreferrer" title={alt}>
+      <Icon height={size} width={size} />
+    </a>
+  );
+});
 
 const Skill = styled.span`
   margin: 0.3rem 0.25rem;
@@ -67,7 +58,7 @@ const Profile: FC<IProfileProps> = ({ title, description }) => (
     <br />
     <Center wrapItems>{Skills}</Center>
     <br />
-    <Center>{Links}</Center>
+    <Center yAlign={CenterYAlign.AROUND}>{Links}</Center>
     <br />
   </Card>
 );

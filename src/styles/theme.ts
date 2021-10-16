@@ -7,6 +7,7 @@ const defaultTheme: DefaultTheme = {
   backgroundSecondary: "rgb(224,224,224)",
   textPrimary: "rgba(0, 0, 0, 0.87)",
   textSecondary: "rgba(0, 0, 0, 0.54)",
+  iconColor: "#445768",
 };
 
 const createTheme = (theme: Partial<DefaultTheme>): DefaultTheme => {
@@ -23,6 +24,7 @@ const darkTheme = createTheme({
   backgroundSecondary: "#7a818c",
   textPrimary: "#fff",
   textSecondary: "#e7e6e6c7",
+  iconColor: "#fff",
 });
 
 export { defaultTheme, darkTheme };
