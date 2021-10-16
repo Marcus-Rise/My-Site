@@ -24,7 +24,7 @@ const Icon = styled.svg`
 `;
 
 const SocialLink: FC<ISocialLinkProps> = ({ className, href, size, icon, alt }) => (
-  <a className={className} href={href} target="_blank" rel="noopener noreferrer" title={alt}>
+  <a href={href} target="_blank" rel="noopener noreferrer" title={alt}>
     <Icon as={icon} width={size} height={size} className={className} />
   </a>
 );
