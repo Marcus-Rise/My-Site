@@ -1,4 +1,4 @@
-import { Github, Habr, Npm, Stackoverflow, Telegram } from "./components/icons";
+import { Github, Habr, Npm, Stackoverflow, Telegram } from "./components";
 
 const socialLinks: ReadonlyArray<{
   href: string;

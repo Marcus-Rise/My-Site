@@ -1,14 +1,20 @@
 import type { FC } from "react";
 import React from "react";
-import { Avatar, Card, Center, CenterYAlign, Chip, SocialLink } from "../components";
+import { Avatar, Card, Center, CenterYAlign, Chip } from "../components";
 import avatar from "../../public/img/profile.jpg";
 import { socialLinks } from "../social-links.array";
 import { skills } from "../skills.array";
 import styled from "styled-components";
 
-const Links = socialLinks.map(({ alt, icon, href, size }) => (
-  <SocialLink href={href} icon={icon} alt={alt} key={alt} size={size} />
-));
+const Links = socialLinks.map(({ alt, icon, href, size }) => {
+  const Icon = icon;
+
+  return (
+    <a key={alt} href={href} target="_blank" rel="noopener noreferrer" title={alt}>
+      <Icon height={size} width={size} />
+    </a>
+  );
+});
 
 const Skill = styled.span`
   margin: 0.3rem 0.25rem;
