@@ -1,6 +1,6 @@
 import type { FC, SVGProps } from "react";
 
 declare global {
-  type IconProps = SVGProps<SVGSVGElement>;
+  type IconProps = Omit<SVGProps<SVGSVGElement>, "ref">;
   type Icon = FC<IconProps>;
 }
