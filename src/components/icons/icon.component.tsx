@@ -7,6 +7,8 @@ const IconSvg = styled.svg`
 
     return css`
       path {
+        transition: stroke ease ${({ theme }) => theme.transitionDelay},
+          fill ease ${({ theme }) => theme.transitionDelay};
         stroke: ${color};
         fill: ${color};
       }

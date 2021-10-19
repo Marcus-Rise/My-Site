@@ -8,6 +8,7 @@ const defaultTheme: DefaultTheme = {
   textPrimary: "rgba(0, 0, 0, 0.87)",
   textSecondary: "rgba(0, 0, 0, 0.54)",
   iconColor: "#445768",
+  transitionDelay: "0.2s",
 };
 
 const createTheme = (theme: Partial<DefaultTheme>): DefaultTheme => {

@@ -42,6 +42,7 @@ const Title = styled.h1`
 
 const Description = styled.p`
   color: ${({ theme }) => theme.textSecondary};
+  transition: color ease ${({ theme }) => theme.transitionDelay};
   text-align: center;
   margin: 0;
   font-size: 0.9rem;
