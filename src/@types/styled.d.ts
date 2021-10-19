@@ -9,5 +9,6 @@ declare module "styled-components" {
     textPrimary: string;
     textSecondary: string;
     iconColor: string;
+    transitionDelay: string;
   }
 }

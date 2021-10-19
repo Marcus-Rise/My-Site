@@ -21,6 +21,8 @@ const ThemeToggle = styled.button`
   align-items: center;
   box-sizing: border-box;
   color: ${({ theme }) => theme.textPrimary};
+  transition: background-color ease ${({ theme }) => theme.transitionDelay},
+    color ease ${({ theme }) => theme.transitionDelay};
 
   &:hover {
     cursor: pointer;

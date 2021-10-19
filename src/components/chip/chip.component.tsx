@@ -16,6 +16,8 @@ const Chip = styled.span<IChipProps>`
   letter-spacing: 0.14994px;
   box-sizing: border-box;
   color: ${({ theme }) => theme.textPrimary};
+  transition: background-color ease ${({ theme }) => theme.transitionDelay},
+    color ease ${({ theme }) => theme.transitionDelay};
   font-weight: 400;
   font-size: ${({ size }) => (size === ChipSizeEnum.big ? "0.85rem" : "0.8rem")};
 `;

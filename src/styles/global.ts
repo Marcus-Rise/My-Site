@@ -9,6 +9,7 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     height: 100%;
     background-color: ${(props) => props.theme.backgroundTheme};
+    transition: background-color ease ${({ theme }) => theme.transitionDelay};
   }
 
   #__next {
@@ -19,6 +20,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Roboto', sans-serif;
 
     color: ${(props) => props.theme.textPrimary};
+    transition: color ease ${({ theme }) => theme.transitionDelay};
   }
 `;
 
