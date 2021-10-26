@@ -8,15 +8,14 @@ const defaultTheme: DefaultTheme = {
   textPrimary: "rgba(0, 0, 0, 0.87)",
   textSecondary: "rgba(0, 0, 0, 0.54)",
   iconColor: "#445768",
+  borderColor: "#939393",
   transitionDelay: "0.4s",
 };
 
-const createTheme = (theme: Partial<DefaultTheme>): DefaultTheme => {
-  return {
-    ...defaultTheme,
-    ...theme,
-  };
-};
+const createTheme = (theme: Partial<DefaultTheme>): DefaultTheme => ({
+  ...defaultTheme,
+  ...theme,
+});
 
 const darkTheme = createTheme({
   isDark: true,
@@ -26,6 +25,7 @@ const darkTheme = createTheme({
   textPrimary: "#fff",
   textSecondary: "#e7e6e6c7",
   iconColor: "#fff",
+  borderColor: "#7a818c",
 });
 
 export { defaultTheme, darkTheme };
