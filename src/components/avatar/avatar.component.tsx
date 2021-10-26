@@ -14,6 +14,8 @@ const ImageStyled = styled.img`
   object-fit: cover;
   border-radius: 100%;
   filter: brightness(115%) !important;
+  border: 3px solid ${({ theme }) => theme.borderColor} !important;
+  transition: border ease ${({ theme }) => theme.transitionDelay};
 `;
 
 const Avatar: FC<IAvatarProps> = ({ alt, size, src }) => {
