@@ -1,7 +1,14 @@
 import { IconSvg } from "./icon.component";
 
 const Telegram: Icon = (props) => (
-  <IconSvg width="184" height="143" viewBox="0 0 184 143" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <IconSvg
+    width="184"
+    height="143"
+    viewBox="0 0 184 143"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path
       fillRule="evenodd"
       clipRule="evenodd"

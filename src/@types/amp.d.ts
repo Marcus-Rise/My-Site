@@ -1,4 +1,12 @@
-type Layout = "fill" | "fixed" | "fixed-height" | "flex-item" | "intrinsic" | "nodisplay" | "responsive" | "container";
+type Layout =
+  | "fill"
+  | "fixed"
+  | "fixed-height"
+  | "flex-item"
+  | "intrinsic"
+  | "nodisplay"
+  | "responsive"
+  | "container";
 
 declare namespace JSX {
   interface AmpImg {
