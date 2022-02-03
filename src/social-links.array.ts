@@ -13,7 +13,7 @@ const socialLinks: ReadonlyArray<{
     size: 30,
   },
   {
-    href: "https://career.habr.com/macrus-rise",
+    href: "https://career.habr.com/marcus-rise",
     icon: Habr,
     alt: "habr",
     size: 37,
