@@ -1,15 +1,13 @@
 import { skills } from "./skills.array";
 
-const title = "Ilya Konstantinov";
-const description = "Lead Web Frontend Developer";
+const title = "Илья Константинов";
+const description = "Ведущий веб-разработчик";
 const keywords: string = [
   ...skills,
+  title,
   ...title.split(" "),
   ...description.split(" "),
-  "Samara",
   "Самара",
-  "Илья",
-  "Константинов",
 ].join(", ");
 
 export { title, description, keywords };
