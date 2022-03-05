@@ -8,6 +8,7 @@ const keywords: string = [
   ...title.split(" "),
   ...description.split(" "),
   "Самара",
+  "Web",
 ].join(", ");
 
 export { title, description, keywords };
