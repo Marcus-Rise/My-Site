@@ -13,7 +13,7 @@ const socialLinks: ReadonlyArray<{
     size: 30,
   },
   {
-    href: "https://career.habr.com/marcus-rise",
+    href: "https://career.habr.com/ilya-konstantinov2022",
     icon: Habr,
     alt: "habr",
     size: 37,
