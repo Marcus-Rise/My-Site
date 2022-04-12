@@ -20,7 +20,7 @@ export const skills: readonly string[] = [
   "Docker",
   "Nginx",
   "Traefik",
-  "GitLab self-hosted"
+  "GitLab self-hosted",
   "Git Flow",
   "Scrum",
 ];
