@@ -4,10 +4,12 @@ export const skills: readonly string[] = [
   "NextJs",
   "VueJs",
   "NuxtJs",
+  "Mobx",
   "Sass",
   "PostCSS",
   "Styled components",
   "Jest",
+  "Storybook",
   "Webpack",
   "PWA",
   "Electron",
@@ -18,4 +20,5 @@ export const skills: readonly string[] = [
   "Nginx",
   "Traefik",
   "GitLab self-hosted",
+  "GitHub Actions",
 ];
