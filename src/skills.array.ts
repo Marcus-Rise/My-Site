@@ -21,4 +21,6 @@ export const skills: readonly string[] = [
   "Traefik",
   "GitLab self-hosted",
   "GitHub Actions",
+  "Agile",
+  "Scrum",
 ];
