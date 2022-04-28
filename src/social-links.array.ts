@@ -7,7 +7,7 @@ const socialLinks: ReadonlyArray<{
   size: number;
 }> = [
   {
-    href: "https://t.me/MarcusRise",
+    href: "https://t.me/Ilya_Konstantinov2022",
     icon: Telegram,
     alt: "telegram",
     size: 30,
