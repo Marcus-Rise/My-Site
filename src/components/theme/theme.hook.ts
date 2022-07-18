@@ -1,11 +1,19 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { darkTheme, defaultTheme } from "../../styles";
 import { ThemePreferencesEnum, useThemePreferences } from "./theme-preferences.hook";
 import { useThemeSystemDark } from "./theme-system–dark.hook";
 
-const useTheme = () => {
+enum ThemeEnum {
+  LIGHT,
+  DARK,
+}
+
+/**
+ *
+ * @param localStorageKey {string} storing value in local storage
+ */
+const useTheme = (localStorageKey?: string) => {
   const [isDark, setIsDark] = useState(false);
-  const [preferences, savePreferences] = useThemePreferences();
+  const [preferences, savePreferences] = useThemePreferences(localStorageKey);
   const isThemeSystemDark = useThemeSystemDark();
 
   const toggleTheme = useCallback(() => {
@@ -33,7 +41,7 @@ const useTheme = () => {
     }
   }, [isThemeSystemDark, preferences]);
 
-  const theme = useMemo(() => (isDark ? darkTheme : defaultTheme), [isDark]);
+  const theme: ThemeEnum = useMemo(() => (isDark ? ThemeEnum.DARK : ThemeEnum.LIGHT), [isDark]);
 
   return {
     theme,
@@ -42,4 +50,4 @@ const useTheme = () => {
   };
 };
 
-export { useTheme, ThemePreferencesEnum };
+export { useTheme, ThemeEnum };
