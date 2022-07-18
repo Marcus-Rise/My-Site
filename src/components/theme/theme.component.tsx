@@ -2,8 +2,9 @@ import dynamic from "next/dynamic";
 import styled, { ThemeProvider } from "styled-components";
 import type { FC } from "react";
 import { useMemo } from "react";
-import { ThemePreferencesEnum, useTheme } from "./theme.hook";
+import { ThemeEnum, ThemePreferencesEnum, useTheme } from "@marcus-rise/react-theme";
 import Head from "next/head";
+import { darkTheme, defaultTheme } from "../../styles";
 
 const ThemeToggle = styled.button`
   background-color: ${({ theme }) => theme.backgroundSecondary};
@@ -32,7 +33,7 @@ const ThemeToggle = styled.button`
 const ThemeToggleProvider = dynamic(async () => ThemeToggle, { ssr: false });
 
 const Theme: FC = ({ children }) => {
-  const { theme, preferences, toggleTheme } = useTheme();
+  const { theme, preferences, toggleTheme } = useTheme("APP_THEME");
 
   const { icon, title } = useMemo(() => {
     let meta: { icon: string; title: string };
@@ -56,12 +57,14 @@ const Theme: FC = ({ children }) => {
     return meta;
   }, [preferences]);
 
+  const currentTheme = useMemo(() => (theme == ThemeEnum.DARK ? darkTheme : defaultTheme), [theme]);
+
   return (
     <>
       <Head>
-        <meta name={"theme-color"} content={theme.backgroundPrimary} />
+        <meta name={"theme-color"} content={currentTheme.backgroundPrimary} />
       </Head>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={currentTheme}>
         <ThemeToggleProvider onClick={toggleTheme} title={title}>
           {icon}
         </ThemeToggleProvider>
