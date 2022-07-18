@@ -2,9 +2,8 @@ import dynamic from "next/dynamic";
 import styled, { ThemeProvider } from "styled-components";
 import type { FC } from "react";
 import { useMemo } from "react";
-import { ThemeEnum, useTheme } from "./theme.hook";
+import { ThemeEnum, ThemePreferencesEnum, useTheme } from "@marcus-rise/react-theme";
 import Head from "next/head";
-import { ThemePreferencesEnum } from "./theme-preferences.hook";
 import { darkTheme, defaultTheme } from "../../styles";
 
 const ThemeToggle = styled.button`
