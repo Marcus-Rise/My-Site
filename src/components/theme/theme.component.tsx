@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import styled, { ThemeProvider } from "styled-components";
 import type { FC } from "react";
 import { useMemo } from "react";
-import { ThemeEnum, ThemePreferencesEnum, useTheme } from "@marcus-rise/react-theme";
+import { ThemePreference, useTheme } from "@marcus-rise/react-theme";
 import Head from "next/head";
 import { darkTheme, defaultTheme } from "../../styles";
 
@@ -33,21 +33,21 @@ const ThemeToggle = styled.button`
 const ThemeToggleProvider = dynamic(async () => ThemeToggle, { ssr: false });
 
 const Theme: FC = ({ children }) => {
-  const { theme, preferences, toggleTheme } = useTheme("APP_THEME");
+  const { isDarkTheme, preferences, toggleTheme } = useTheme();
 
   const { icon, title } = useMemo(() => {
     let meta: { icon: string; title: string };
 
     switch (preferences) {
-      case ThemePreferencesEnum.LIGHT: {
+      case ThemePreference.LIGHT: {
         meta = { title: "Light", icon: "☀︎" };
         break;
       }
-      case ThemePreferencesEnum.DARK: {
+      case ThemePreference.DARK: {
         meta = { title: "Dark", icon: "☾" };
         break;
       }
-      case ThemePreferencesEnum.SYSTEM:
+      case ThemePreference.SYSTEM:
       default: {
         meta = { title: "System", icon: "⌽" };
         break;
@@ -57,7 +57,7 @@ const Theme: FC = ({ children }) => {
     return meta;
   }, [preferences]);
 
-  const currentTheme = useMemo(() => (theme == ThemeEnum.DARK ? darkTheme : defaultTheme), [theme]);
+  const currentTheme = useMemo(() => (isDarkTheme ? darkTheme : defaultTheme), [isDarkTheme]);
 
   return (
     <>
