@@ -187,10 +187,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@marcus-rise/react-theme@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@marcus-rise/react-theme/-/react-theme-0.2.0.tgz#fd21185f7076747e51fa5810ccebfcc261598672"
-  integrity sha512-v5kSs0PIazrrxcBA5FRjv9csRx2UNG2HvYaxiGz3uVQqWS/9PBOv8clUKMLqwbvsfbuRNGKLeVK12QxjCys9MA==
+"@marcus-rise/react-theme@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@marcus-rise/react-theme/-/react-theme-0.3.0.tgz#358f20df17f2ddf522ddb68b36bd1f49b9328cab"
+  integrity sha512-GbT92E92lRVRn/qPvmVD6Dvpvp1q88MSkposlRI3Jxgypag6bmg9q5ipNt8nBSSz1R18bYCpVVC/1b/UfFtATw==
 
 "@next/env@12.1.0":
   version "12.1.0"
