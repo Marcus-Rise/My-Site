@@ -13,7 +13,7 @@ interface IAvatarProps {
 const ImageStyled = styled.img`
   object-fit: cover;
   border-radius: 100%;
-  filter: brightness(115%) !important;
+  filter: brightness(105%) !important;
   border: 3px solid ${({ theme }) => theme.borderColor} !important;
   transition: border ease ${({ theme }) => theme.transitionDelay};
 `;
