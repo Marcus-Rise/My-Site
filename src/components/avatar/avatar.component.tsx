@@ -29,7 +29,6 @@ const Avatar: FC<IAvatarProps> = ({ alt, size, src }) => {
       height={size}
       width={size}
       src={src}
-      priority
       placeholder={"blur"}
       blurDataURL={
         "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNcXw8AAeMBMA+N6mYAAAAASUVORK5CYII="
