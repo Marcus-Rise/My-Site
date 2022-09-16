@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import React from "react";
-import Image from "next/image";
+import Image from "next/future/image";
 import { useAmp } from "next/amp";
 import styled from "styled-components";
 
