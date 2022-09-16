@@ -11,6 +11,7 @@ const Home: FC = () => (
       <meta name="title" content={title} />
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
+      <meta property="og:image" content={"/img/profile.jpg"} />
     </Head>
     <Layout center>
       <Profile title={title} description={description} />
