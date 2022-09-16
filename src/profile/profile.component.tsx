@@ -1,5 +1,4 @@
 import type { FC } from "react";
-import React from "react";
 import { Avatar, Card, Center, CenterYAlign, Chip } from "../components";
 import avatar from "../../public/img/profile.jpg";
 import { socialLinks } from "../social-links.array";

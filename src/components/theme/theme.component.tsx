@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import styled, { ThemeProvider } from "styled-components";
-import type { FC } from "react";
+import type { FC, PropsWithChildren } from "react";
 import { useMemo } from "react";
 import { ThemePreference, useTheme } from "@marcus-rise/react-theme";
 import Head from "next/head";
@@ -32,7 +32,7 @@ const ThemeToggle = styled.button`
 
 const ThemeToggleProvider = dynamic(async () => ThemeToggle, { ssr: false });
 
-const Theme: FC = ({ children }) => {
+const Theme: FC<PropsWithChildren> = ({ children }) => {
   const { isDarkTheme, preferences, toggleTheme } = useTheme();
 
   const { icon, title } = useMemo(() => {
