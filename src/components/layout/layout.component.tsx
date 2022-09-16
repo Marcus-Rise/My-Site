@@ -1,12 +1,12 @@
-import type { FC } from "react";
+import type { FC, PropsWithChildren } from "react";
 import { GlobalStyles } from "../../styles";
 import styled, { css } from "styled-components";
 import { Theme } from "../theme";
 import { ThemeProvider } from "@marcus-rise/react-theme";
 
-interface ILayoutProps {
+type LayoutProps = PropsWithChildren<{
   center?: boolean;
-}
+}>;
 
 const Main = styled.main<{
   center?: boolean;
@@ -23,15 +23,13 @@ const Main = styled.main<{
     `}
 `;
 
-const Layout: FC<ILayoutProps> = ({ center, children }) => {
-  return (
-    <ThemeProvider>
-      <Theme>
-        <GlobalStyles />
-        <Main center={center}>{children}</Main>
-      </Theme>
-    </ThemeProvider>
-  );
-};
+const Layout: FC<LayoutProps> = ({ center, children }) => (
+  <ThemeProvider>
+    <Theme>
+      <GlobalStyles />
+      <Main center={center}>{children}</Main>
+    </Theme>
+  </ThemeProvider>
+);
 
 export { Layout };
