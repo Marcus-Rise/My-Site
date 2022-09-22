@@ -23,7 +23,7 @@ const Avatar: FC<AvatarProps> = ({ alt, size, src }) => {
   return isAmp ? (
     <amp-img height={size} width={size} src={src} alt={alt} layout={"fixed"} />
   ) : (
-    <ImageStyled as={Image} alt={alt} height={size} width={size} src={src} />
+    <ImageStyled as={Image} alt={alt} height={size} width={size} src={src} quality={25} />
   );
 };
 
