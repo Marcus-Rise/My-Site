@@ -3,11 +3,11 @@ import Image from "next/future/image";
 import { useAmp } from "next/amp";
 import styled from "styled-components";
 
-interface IAvatarProps {
+type AvatarProps = {
   size: number | string;
   alt: string;
   src: any;
-}
+};
 
 const ImageStyled = styled.img`
   object-fit: cover;
@@ -17,24 +17,13 @@ const ImageStyled = styled.img`
   transition: border ease ${({ theme }) => theme.transitionDelay};
 `;
 
-const Avatar: FC<IAvatarProps> = ({ alt, size, src }) => {
+const Avatar: FC<AvatarProps> = ({ alt, size, src }) => {
   const isAmp = useAmp();
 
   return isAmp ? (
     <amp-img height={size} width={size} src={src} alt={alt} layout={"fixed"} />
   ) : (
-    <ImageStyled
-      as={Image}
-      alt={alt}
-      height={size}
-      width={size}
-      src={src}
-      placeholder={"blur"}
-      blurDataURL={
-        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNcXw8AAeMBMA+N6mYAAAAASUVORK5CYII="
-      }
-      quality={25}
-    />
+    <ImageStyled as={Image} alt={alt} height={size} width={size} src={src} quality={25} priority />
   );
 };
 
