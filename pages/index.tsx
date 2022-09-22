@@ -1,10 +1,59 @@
-import type { FC } from "react";
+import avatar from "../public/img/profile.jpg";
+import { socialLinks } from "../src/social-links.array";
+import { skills } from "../src/skills.array";
+import styled from "styled-components";
+import { Center, CenterYAlign } from "../src/components/center";
+import { Chip } from "../src/components/chip";
+import { Avatar } from "../src/components/avatar";
+import { Card } from "../src/components/card";
+import { Layout } from "../src/components/layout";
 import { description, keywords, title } from "../src/seo";
-import { Profile } from "../src/profile";
 import Head from "next/head";
-import { Layout } from "../src/components";
 
-const Home: FC = () => (
+const ProfileCard = styled(Card)`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`;
+
+const Links = socialLinks.map(({ alt, icon, href, size }) => {
+  const Icon = icon;
+
+  return (
+    <a key={alt} href={href} target="_blank" rel="noopener noreferrer" title={alt}>
+      <Icon height={size} width={size} />
+    </a>
+  );
+});
+
+const Skill = styled.span`
+  margin: 0.3rem 0.25rem;
+`;
+
+const Skills = skills.map((value) => (
+  <Skill as={Chip} key={value}>
+    {value}
+  </Skill>
+));
+
+const Title = styled.h1`
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+  line-height: 1.334;
+  letter-spacing: 0;
+`;
+
+const Description = styled.p`
+  color: ${({ theme }) => theme.textSecondary};
+  transition: color ease ${({ theme }) => theme.transitionDelay};
+  text-align: center;
+  margin: 0;
+  font-size: 0.9rem;
+`;
+
+const Profile: NextPageWithLayout = () => (
   <>
     <Head>
       <title>{title}</title>
@@ -13,10 +62,20 @@ const Home: FC = () => (
       <meta name="keywords" content={keywords} />
       <meta property="og:image" content={"/img/profile.jpg"} />
     </Head>
-    <Layout center>
-      <Profile title={title} description={description} />
-    </Layout>
+    <ProfileCard>
+      <Center>
+        <Avatar src={avatar} size={150} alt={title} />
+      </Center>
+
+      <Title>{title}</Title>
+      <Description>{description}</Description>
+
+      <Center wrapItems>{Skills}</Center>
+      <Center yAlign={CenterYAlign.AROUND}>{Links}</Center>
+    </ProfileCard>
   </>
 );
 
-export default Home;
+Profile.getLayout = (page) => <Layout center>{page}</Layout>;
+
+export default Profile;
