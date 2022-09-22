@@ -1,8 +1,8 @@
 import type { FC, PropsWithChildren } from "react";
-import { GlobalStyles } from "../../styles";
 import styled, { css } from "styled-components";
-import { Theme } from "../theme";
 import { ThemeProvider } from "@marcus-rise/react-theme";
+import { Theme } from "../theme";
+import { GlobalStyles } from "../../styles";
 
 type LayoutProps = PropsWithChildren<{
   center?: boolean;
