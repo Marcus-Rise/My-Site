@@ -1,13 +1,13 @@
-import avatar from "../public/img/profile.jpg";
-import { socialLinks } from "../src/social-links.array";
-import { skills } from "../src/skills.array";
+import avatar from "../../public/img/profile.jpg";
+import { socialLinks } from "../social-links.array";
+import { skills } from "../skills.array";
 import styled from "styled-components";
-import { Center, CenterYAlign } from "../src/components/center";
-import { Chip } from "../src/components/chip";
-import { Avatar } from "../src/components/avatar";
-import { Card } from "../src/components/card";
-import { Layout } from "../src/components/layout";
-import { description, keywords, title } from "../src/seo";
+import { Center, CenterYAlign } from "../components/center";
+import { Chip } from "../components/chip";
+import { Avatar } from "../components/avatar";
+import { Card } from "../components/card";
+import { Layout } from "../components/layout";
+import { description, keywords, title } from "../seo";
 import Head from "next/head";
 
 const ProfileCard = styled(Card)`
