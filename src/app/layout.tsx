@@ -3,6 +3,7 @@ import styles from "./layout.module.scss";
 import { Roboto } from "@next/font/google";
 import classNames from "classnames";
 import "../styles/global.scss";
+import { Theme } from "../components/theme";
 
 const roboto = Roboto({
   weight: "400",
@@ -15,7 +16,7 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => (
   <html lang={"ru"} className={styles.html}>
     <head />
     <body className={classNames(styles.body, roboto.variable)}>
-      {/*<Theme />*/}
+      <Theme />
       <main className={styles.main}>{children}</main>
     </body>
   </html>

@@ -1,11 +1,9 @@
-"use client";
-
 import type { FC } from "react";
 import { useEffect, useMemo } from "react";
-import { ThemePreference, useTheme } from "@marcus-rise/react-theme";
+import { ThemePreference, ThemeProvider, useTheme } from "@marcus-rise/react-theme";
 import styles from "./theme.module.scss";
 
-const Theme: FC = () => {
+const ThemeConsumer: FC = () => {
   const { isDarkTheme, preferences, toggleTheme } = useTheme();
 
   const { icon, title } = useMemo(() => {
@@ -44,5 +42,11 @@ const Theme: FC = () => {
     </button>
   );
 };
+
+const Theme: FC = () => (
+  <ThemeProvider>
+    <ThemeConsumer />
+  </ThemeProvider>
+);
 
 export { Theme };
