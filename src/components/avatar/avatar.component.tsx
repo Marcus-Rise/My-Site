@@ -17,6 +17,8 @@ const Avatar: FC<AvatarProps> = ({ alt, size, src }) => (
     src={src}
     quality={25}
     priority
+    sizes={"100vw"}
+    placeholder={"blur"}
   />
 );
 
