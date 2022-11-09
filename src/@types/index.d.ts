@@ -1,11 +1,6 @@
-import type { FC, ReactElement, SVGProps } from "react";
-import type { NextPage } from "next";
+import type { FC, SVGProps } from "react";
 
 declare global {
-  type IconProps = Omit<SVGProps<SVGSVGElement>, "ref">;
+  type IconProps = SVGProps<SVGSVGElement>;
   type Icon = FC<IconProps>;
-
-  type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
-    getLayout?: (page: ReactElement) => ReactNode;
-  };
 }

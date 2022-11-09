@@ -1,0 +1,13 @@
+@use "../../styles/variables" as v;
+
+.chip {
+  background-color: var(--color-background-dark);
+  border-radius: 1.5rem;
+  padding: 0.5rem 0.75rem;
+  letter-spacing: 0.14994px;
+  box-sizing: border-box;
+  color: var(--color-text-darkest);
+  transition: background-color ease v.$transition-delay,
+  color ease v.$transition-delay;
+  font-weight: 400;
+}

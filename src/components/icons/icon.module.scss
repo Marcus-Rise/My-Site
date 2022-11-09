@@ -1,0 +1,9 @@
+@use "../../styles/variables" as v;
+
+.icon {
+  path {
+    transition: stroke ease v.$transition-delay, fill ease v.$transition-delay;
+    stroke: var(--color-icon);
+    fill: var(--color-icon);
+  }
+}

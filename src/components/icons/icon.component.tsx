@@ -1,18 +1,5 @@
-import styled, { css } from "styled-components";
+import styles from "./icon.module.scss";
 
-const IconSvg = styled.svg`
-  ${(props) => {
-    const color = props.theme.iconColor;
-
-    return css`
-      path {
-        transition: stroke ease ${({ theme }) => theme.transitionDelay},
-          fill ease ${({ theme }) => theme.transitionDelay};
-        stroke: ${color};
-        fill: ${color};
-      }
-    `;
-  }}
-`;
+const IconSvg: Icon = (props) => <svg {...props} className={styles.icon} />;
 
 export { IconSvg };

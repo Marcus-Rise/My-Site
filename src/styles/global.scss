@@ -1,0 +1,29 @@
+@use "variables" as v;
+@use "typography" as t;
+
+:root {
+  --color-background-darkest: #{v.$color-background-darkest};
+  --color-background-dark: #{v.$color-background-dark};
+  --color-background-lightest: #{v.$color-background-lightest};
+  --color-text-darkest: #{v.$color-text-darkest};
+  --color-text-lightest: #{v.$color-text-lightest};
+  --color-icon: #{v.$color-icon};
+  --color-border: #{v.$color-border};
+}
+
+[data-theme="dark"] {
+  --color-background-darkest: #{v.$color-dark-background-darkest};
+  --color-background-dark: #{v.$color-dark-background-dark};
+  --color-background-lightest: #{v.$color-dark-background-lightest};
+  --color-text-darkest: #{v.$color-dark-text-darkest};
+  --color-text-lightest: #{v.$color-dark-text-lightest};
+  --color-icon: #{v.$color-dark-icon};
+  --color-border: #{v.$color-dark-border};
+}
+
+* {
+  @include t.roboto;
+
+  color: var(--color-text-darkest);
+  transition: color ease #{v.$transition-delay};
+}
