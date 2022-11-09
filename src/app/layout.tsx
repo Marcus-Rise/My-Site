@@ -14,7 +14,6 @@ const roboto = Roboto({
 
 const RootLayout: FC<PropsWithChildren> = ({ children }) => (
   <html lang={"ru"} className={styles.html}>
-    <head />
     <body className={classNames(styles.body, roboto.variable)}>
       <Theme />
       <main className={styles.main}>{children}</main>
