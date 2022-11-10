@@ -1,20 +1,25 @@
-import styled from "styled-components";
+import styles from "./center.module.scss";
+import type { FC, PropsWithChildren } from "react";
 
 enum CenterYAlign {
   CENTER = "center",
   AROUND = "space-around",
 }
 
-interface ICenterProps {
+type CenterProps = PropsWithChildren<{
   wrapItems?: boolean;
   yAlign?: CenterYAlign;
-}
+}>;
 
-const Center = styled.div<ICenterProps>`
-  display: flex;
-  justify-content: ${(props) => props.yAlign ?? CenterYAlign.CENTER};
-  align-items: center;
-  flex-wrap: ${(props) => (!!props.wrapItems ? "wrap" : "inherit")};
-`;
+const Center: FC<CenterProps> = ({ yAlign, wrapItems, ...props }) => (
+  <div
+    {...props}
+    className={styles.center}
+    style={{
+      justifyContent: yAlign ?? CenterYAlign.CENTER,
+      flexWrap: wrapItems ? "wrap" : "inherit",
+    }}
+  />
+);
 
 export { Center, CenterYAlign };

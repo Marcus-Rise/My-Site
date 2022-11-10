@@ -1,0 +1,35 @@
+@use "../styles/variables" as v;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  background-color: var(--color-background-lightest);
+  transition: background-color ease v.$transition-delay;
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
+  max-width: 23rem;
+  box-sizing: border-box;
+}
+
+.skill {
+  margin: 0.3rem 0.25rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+  line-height: 1.334;
+  letter-spacing: 0;
+}
+
+.description {
+  color: var(--color-text-lightest);
+  transition: color ease v.$transition-delay;
+  text-align: center;
+  margin: 0;
+  font-size: 0.9rem;
+}
