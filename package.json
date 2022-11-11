@@ -10,7 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@marcus-rise/react-theme": "^0.4.6",
+    "@marcus-rise/react-theme": "^1.0.0-canary.0",
     "@next/font": "^13.0.3-canary.3",
     "classnames": "^2.3.2",
     "next": "^13.0.3-canary.2",

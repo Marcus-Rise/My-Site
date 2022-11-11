@@ -3,6 +3,8 @@ import { useEffect, useMemo } from "react";
 import { ThemePreference, ThemeProvider, useTheme } from "@marcus-rise/react-theme";
 import styles from "./theme.module.scss";
 
+const THEME_COOKIE_KEY = "theme";
+
 const ThemeConsumer: FC = () => {
   const { isDarkTheme, preferences, toggleTheme } = useTheme();
 
@@ -18,7 +20,6 @@ const ThemeConsumer: FC = () => {
         meta = { title: "Dark", icon: "☾" };
         break;
       }
-      case ThemePreference.SYSTEM:
       default: {
         meta = { title: "System", icon: "⌽" };
         break;
@@ -44,9 +45,9 @@ const ThemeConsumer: FC = () => {
 };
 
 const Theme: FC = () => (
-  <ThemeProvider>
+  <ThemeProvider cookiesKey={THEME_COOKIE_KEY}>
     <ThemeConsumer />
   </ThemeProvider>
 );
 
-export { Theme };
+export { Theme, THEME_COOKIE_KEY };
