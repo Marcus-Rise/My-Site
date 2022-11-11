@@ -2,8 +2,7 @@ import type { FC } from "react";
 import { useEffect, useMemo } from "react";
 import { ThemePreference, ThemeProvider, useTheme } from "@marcus-rise/react-theme";
 import styles from "./theme.module.scss";
-
-const THEME_COOKIE_KEY = "theme";
+import { THEME_COOKIE_KEY } from "./theme-config";
 
 const ThemeConsumer: FC = () => {
   const { isDarkTheme, preferences, toggleTheme } = useTheme();
@@ -50,4 +49,4 @@ const Theme: FC = () => (
   </ThemeProvider>
 );
 
-export { Theme, THEME_COOKIE_KEY };
+export { Theme };
