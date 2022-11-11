@@ -15,9 +15,8 @@ const roboto = Roboto({
 });
 
 const RootLayout: FC<PropsWithChildren> = ({ children }) => {
-  const headersList = headers();
   const userPreferColorScheme = cookies().get(THEME_COOKIE_KEY);
-  const systemDefaultColorScheme = headersList.get("sec-ch-prefers-color-scheme");
+  const systemDefaultColorScheme = headers().get("sec-ch-prefers-color-scheme");
   const colorScheme = userPreferColorScheme?.value ?? systemDefaultColorScheme;
 
   return (
