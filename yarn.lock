@@ -51,10 +51,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@marcus-rise/react-theme@^1.0.0-canary.0":
-  version "1.0.0-canary.0"
-  resolved "https://registry.yarnpkg.com/@marcus-rise/react-theme/-/react-theme-1.0.0-canary.0.tgz#316baa61f16b4d4e5fdcf7b63c282c4f10aaa858"
-  integrity sha512-I+hxFOP4toO7EVL/Zs/lT3kmv8lS2/kpkTKf1u/eK+hqs4/aqpdMM1PFVNXNm/bbpR5C1KLSG61HwE994gmLQw==
+"@marcus-rise/react-theme@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@marcus-rise/react-theme/-/react-theme-1.0.0.tgz#3bef87d403e75128f95aabf8abb3bc81aeb73955"
+  integrity sha512-5U3dgzft8PPTXg4A1vu84z8B7qyHrC3jZyrG9FyMSRc6xlFYg5zBN44cAJ80ejfs6nIbWBReYN29rACWP+Umdw==
 
 "@next/env@13.0.3-canary.3":
   version "13.0.3-canary.3"
