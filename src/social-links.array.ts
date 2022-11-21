@@ -25,7 +25,7 @@ const socialLinks: ReadonlyArray<{
     size: 50,
   },
   {
-    href: "https://stackoverflow.com/users/story/8028101",
+    href: "https://stackoverflow.com/users/8028101/ilya-konstantinov",
     icon: Stackoverflow,
     alt: "stackoverflow",
     size: 30,
