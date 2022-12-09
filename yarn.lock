@@ -51,10 +51,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@marcus-rise/react-theme@^1.0.1-canary.1":
-  version "1.0.1-canary.1"
-  resolved "https://registry.yarnpkg.com/@marcus-rise/react-theme/-/react-theme-1.0.1-canary.1.tgz#f35604f07d4cabe0e9ee92f6e5bce46d69d84ada"
-  integrity sha512-wLmVxKj/D+idvZmjzzKTDkcsQ4hSrWz5to+RWtiyY4+2KhrGYjv4spfrYmBZFKrSJVHO6LjxjOl+8v4BUrDE9g==
+"@marcus-rise/react-theme@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@marcus-rise/react-theme/-/react-theme-1.0.1.tgz#d2df4b7a4d2eff506e191c82b75a15699226fecb"
+  integrity sha512-oHE1p9u2jlK48wNyQSsBGFF2fcaze0zB6ZFfYyUv6+rSI/xrEXfJd3a5rsimxVdya8p64UHHyJVx5pMZ/53kBQ==
 
 "@next/env@13.0.6":
   version "13.0.6"
