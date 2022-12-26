@@ -3,7 +3,6 @@ module.exports = {
   reactStrictMode: true,
   experimental: {
     appDir: true,
-    allowMiddlewareResponseBody: true,
   },
   headers() {
     return [
