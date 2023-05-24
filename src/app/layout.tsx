@@ -7,6 +7,7 @@ import { Theme } from "../components/theme";
 import type { Metadata } from "next";
 import { description, keywords, title } from "../seo";
 import variables from "../styles/variables.module.scss";
+import { headers } from "next/headers";
 
 const roboto = Roboto({
   weight: "400",
@@ -24,21 +25,26 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => (
   </html>
 );
 
-const metadata: Metadata = {
-  title,
-  description,
-  keywords,
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-  },
-  colorScheme: "light dark",
-  openGraph: {
+const generateMetadata: () => Metadata = () => {
+  const host = headers().get("Host") ?? "";
+
+  return {
     title,
     description,
-  },
-  themeColor: variables.colorBackgroundDarkest,
+    keywords,
+    viewport: {
+      width: "device-width",
+      initialScale: 1,
+    },
+    colorScheme: "light dark",
+    openGraph: {
+      title,
+      description,
+    },
+    themeColor: variables.colorBackgroundDarkest,
+    metadataBase: new URL(`https://${host}`),
+  };
 };
 
 export default RootLayout;
-export { metadata };
+export { generateMetadata };
