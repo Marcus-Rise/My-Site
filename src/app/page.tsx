@@ -1,4 +1,4 @@
-import avatar from "../../public/img/profile.jpg";
+import avatar from "./opengraph-image.jpg";
 import type { FC } from "react";
 import { skills } from "../skills.array";
 import { socialLinks } from "../social-links.array";
