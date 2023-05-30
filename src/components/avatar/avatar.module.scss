@@ -2,6 +2,7 @@
 
 .image {
   object-fit: cover;
+  object-position: center;
   border-radius: 100%;
   filter: brightness(105%) !important;
   border: 3px solid var(--color-border) !important;
