@@ -3,10 +3,11 @@ import type { FC } from "react";
 import { skills } from "../skills.array";
 import { socialLinks } from "../social-links.array";
 import { Center, CenterYAlign } from "../components/center";
-import { description, title } from "../seo";
+import { description, keywords, title } from "../seo";
 import { Chip } from "../components/chip";
 import { Avatar } from "../components/avatar";
 import styles from "./page.module.scss";
+import type { Metadata } from "next";
 
 const Links = socialLinks.map(({ alt, icon, href, size }) => (
   <a key={alt} href={href} target="_blank" rel="noopener noreferrer" title={alt}>
@@ -34,4 +35,15 @@ const Profile: FC = () => (
   </div>
 );
 
+const metadata: Metadata = {
+  title,
+  description,
+  keywords,
+  openGraph: {
+    title,
+    description,
+  },
+};
+
 export default Profile;
+export { metadata };
