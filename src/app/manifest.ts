@@ -3,7 +3,7 @@ import { description, title } from "../seo";
 import variables from "../styles/variables.module.scss";
 import icon from "./icon.png";
 
-export default (): MetadataRoute.Manifest => ({
+const manifest = (): MetadataRoute.Manifest => ({
   name: `${title} ${description}`,
   short_name: title,
   theme_color: variables.colorBackgroundDarkest,
@@ -12,5 +12,14 @@ export default (): MetadataRoute.Manifest => ({
   orientation: "portrait",
   start_url: ".",
   id: "/",
-  icons: [{ src: icon.src, purpose: "any", sizes: `${icon.height}x${icon.width}` }],
+  icons: [
+    { src: icon.src, purpose: "maskable", sizes: `${icon.height}x${icon.width}` },
+    {
+      src: icon.src,
+      purpose: "any",
+      sizes: `${icon.height}x${icon.width}`,
+    },
+  ],
 });
+
+export default manifest;
