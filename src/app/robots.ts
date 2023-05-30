@@ -15,7 +15,8 @@ const disallowRules: Rules = {
 const robots = (): MetadataRoute.Robots => {
   const isAllow = Boolean(process.env.ALLOW_ROBOTS);
   const host = headers().get("Host") ?? "";
-  const sitemap = new URL(`https://${host}/sitemap.xml`).href;
+  const baseUrl = new URL(`https://${host}`);
+  const sitemap = new URL("/sitemap.xml", baseUrl).href;
 
   return {
     rules: isAllow ? allowRules : disallowRules,
