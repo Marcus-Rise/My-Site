@@ -7,6 +7,7 @@ import { Theme } from "../components/theme";
 import type { Metadata } from "next";
 import variables from "../styles/variables.module.scss";
 import { headers } from "next/headers";
+import { AnalyticsYandex } from "../analytics/yandex";
 
 const roboto = Roboto({
   weight: "400",
@@ -15,12 +16,15 @@ const roboto = Roboto({
   display: "swap",
 });
 
+const ENABLE_ANALYTICS = process.env.ANALYTICS === "true";
+
 const RootLayout: FC<PropsWithChildren> = ({ children }) => (
   <html lang={"ru"} className={classNames(styles.html, roboto.variable)}>
     <body className={styles.body}>
       <Theme />
       <main className={styles.main}>{children}</main>
     </body>
+    {ENABLE_ANALYTICS && <AnalyticsYandex />}
   </html>
 );
 
