@@ -23,8 +23,8 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => (
     <body className={styles.body}>
       <Theme />
       <main className={styles.main}>{children}</main>
+      {ENABLE_ANALYTICS && <AnalyticsYandex />}
     </body>
-    {ENABLE_ANALYTICS && <AnalyticsYandex />}
   </html>
 );
 
