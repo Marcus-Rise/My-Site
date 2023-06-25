@@ -8,6 +8,7 @@ import type { Metadata } from "next";
 import variables from "../styles/variables.module.scss";
 import { headers } from "next/headers";
 import { AnalyticsYandex } from "../analytics/yandex";
+import { Analytics } from "@vercel/analytics/react";
 
 const roboto = Roboto({
   weight: "400",
@@ -23,7 +24,12 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => (
     <body className={styles.body}>
       <Theme />
       <main className={styles.main}>{children}</main>
-      {ENABLE_ANALYTICS && <AnalyticsYandex />}
+      {ENABLE_ANALYTICS && (
+        <>
+          <Analytics />
+          <AnalyticsYandex />
+        </>
+      )}
     </body>
   </html>
 );
