@@ -1,0 +1,10 @@
+.toggle {
+  font-weight: bold;
+  background-color: var(--color-background-lightest);
+
+  &:hover {
+
+    cursor: pointer;
+  }
+}
+

@@ -11,7 +11,7 @@ import { AnalyticsYandex } from "../analytics/yandex";
 import { Analytics } from "@vercel/analytics/react";
 
 const roboto = Roboto({
-  weight: "400",
+  weight: ["400", "700"],
   subsets: ["cyrillic", "latin"],
   variable: "--roboto",
   display: "swap",

@@ -1,24 +1,13 @@
 import styles from "./chip.module.scss";
-import type { FC, PropsWithChildren } from "react";
+import type { FC, HTMLProps } from "react";
 import classNames from "classnames";
 
-enum ChipSizeEnum {
-  big,
-}
-
-type ChipProps = PropsWithChildren<{
-  size?: ChipSizeEnum;
+type ChipProps = HTMLProps<HTMLSpanElement> & {
   className?: string;
-}>;
+};
 
-const Chip: FC<ChipProps> = ({ size, className, ...props }) => (
-  <span
-    {...props}
-    className={classNames(styles.chip, className)}
-    style={{
-      fontSize: size === ChipSizeEnum.big ? "0.85rem" : "0.8rem",
-    }}
-  />
+const Chip: FC<ChipProps> = ({ className, ...props }) => (
+  <span {...props} className={classNames(styles.chip, className)} />
 );
 
-export { Chip, ChipSizeEnum };
+export { Chip };
