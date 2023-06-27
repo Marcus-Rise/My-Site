@@ -2,36 +2,45 @@ import avatar from "./opengraph-image.jpg";
 import type { FC } from "react";
 import { skills } from "../skills.array";
 import { socialLinks } from "../social-links.array";
-import { Center, CenterYAlign } from "../components/center";
-import { description, keywords, title } from "../seo";
+import { description, keywords, slogan, title } from "../seo";
 import { Chip } from "../components/chip";
 import { Avatar } from "../components/avatar";
 import styles from "./page.module.scss";
 import type { Metadata } from "next";
+import { ChipsLimited } from "../components/chips-limited";
 
 const Links = socialLinks.map(({ alt, icon, href, size }) => (
   <a key={alt} href={href} target="_blank" rel="noopener noreferrer" title={alt}>
     {icon({ height: size, width: size })}
   </a>
 ));
+const Skills = skills.map((value) => <Chip key={value}>{value}</Chip>);
+const SKILLS_LIMIT = 3;
 
-const Skills = skills.map((value) => (
-  <Chip className={styles.skill} key={value}>
-    {value}
-  </Chip>
-));
+const text = description
+  .split("\n")
+  .filter((item) => !!item)
+  .map((item) => (
+    <p key={item} className={styles.description}>
+      {item}
+    </p>
+  ));
 
 const Profile: FC = () => (
   <div className={styles.card}>
-    <Center>
+    <section className={styles.first}>
       <Avatar src={avatar} size={150} alt={title} />
-    </Center>
+      <h1 className={styles.title}>{title}</h1>
+      <p className={styles.slogan}>{slogan}</p>
+    </section>
 
-    <h1 className={styles.title}>{title}</h1>
-    <p className={styles.description}>{description}</p>
-
-    <Center wrapItems>{Skills}</Center>
-    <Center yAlign={CenterYAlign.AROUND}>{Links}</Center>
+    <section className={styles.second}>
+      {text}
+      <div className={styles.skills}>
+        <ChipsLimited limit={SKILLS_LIMIT}>{Skills}</ChipsLimited>
+      </div>
+      <div className={styles.links}>{Links}</div>
+    </section>
   </div>
 );
 
