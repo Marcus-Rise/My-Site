@@ -17,6 +17,15 @@ const Links = socialLinks.map(({ alt, icon, href, size }) => (
 const Skills = skills.map((value) => <Chip key={value}>{value}</Chip>);
 const SKILLS_LIMIT = 3;
 
+const text = description
+  .split("\n")
+  .filter((item) => !!item)
+  .map((item) => (
+    <p key={item} className={styles.description}>
+      {item}
+    </p>
+  ));
+
 const Profile: FC = () => (
   <div className={styles.card}>
     <section className={styles.first}>
@@ -26,7 +35,7 @@ const Profile: FC = () => (
     </section>
 
     <section className={styles.second}>
-      <p className={styles.description}>{description}</p>
+      {text}
       <div className={styles.skills}>
         <ChipsLimited limit={SKILLS_LIMIT}>{Skills}</ChipsLimited>
       </div>
