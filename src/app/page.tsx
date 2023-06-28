@@ -52,6 +52,7 @@ const metadata: Metadata = {
     title,
     description,
     url: "/",
+    type: "profile",
   },
 };
 
