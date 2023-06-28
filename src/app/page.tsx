@@ -51,6 +51,7 @@ const metadata: Metadata = {
   openGraph: {
     title,
     description,
+    url: "/",
   },
 };
 
