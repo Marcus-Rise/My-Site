@@ -44,13 +44,15 @@ const Profile: FC = () => (
   </div>
 );
 
+const shortDescription = description.slice(0, 199);
+
 const metadata: Metadata = {
   title,
-  description: description.slice(0, 199),
+  description: shortDescription,
   keywords,
   openGraph: {
     title,
-    description,
+    description: shortDescription,
     url: "/",
     type: "profile",
   },
