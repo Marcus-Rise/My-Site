@@ -9,4 +9,6 @@ const description = `
 `;
 const keywords: string[] = [...skills, ...title.split(" "), "Самара", "Web"];
 
-export { title, description, keywords, slogan };
+const baseUrl = new URL(process.env.BASE_URL || "http://localhost:3000");
+
+export { title, description, keywords, slogan, baseUrl };

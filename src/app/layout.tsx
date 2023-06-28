@@ -8,6 +8,7 @@ import type { Metadata } from "next";
 import variables from "../styles/variables.module.scss";
 import { AnalyticsYandex } from "../analytics/yandex";
 import { Analytics } from "@vercel/analytics/react";
+import { baseUrl } from "../seo";
 
 const roboto = Roboto({
   weight: ["400", "700"],
@@ -40,7 +41,7 @@ const metadata: Metadata = {
   },
   colorScheme: "light dark",
   themeColor: variables.colorBackgroundDarkest,
-  metadataBase: new URL(process.env.BASE_URL || "http://localhost:3000"),
+  metadataBase: baseUrl,
 };
 
 export default RootLayout;
