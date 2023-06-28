@@ -46,7 +46,7 @@ const Profile: FC = () => (
 
 const metadata: Metadata = {
   title,
-  description,
+  description: description.slice(0, 199),
   keywords,
   openGraph: {
     title,
