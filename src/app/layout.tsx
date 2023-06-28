@@ -6,7 +6,6 @@ import "../styles/global.scss";
 import { Theme } from "../components/theme";
 import type { Metadata } from "next";
 import variables from "../styles/variables.module.scss";
-import { headers } from "next/headers";
 import { AnalyticsYandex } from "../analytics/yandex";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -34,20 +33,14 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => (
   </html>
 );
 
-const generateMetadata: () => Metadata = () => {
-  const host = headers().get("Host") ?? "";
-  const baseUrl = new URL(`https://${host}`);
-
-  return {
-    viewport: {
-      width: "device-width",
-      initialScale: 1,
-    },
-    colorScheme: "light dark",
-    themeColor: variables.colorBackgroundDarkest,
-    metadataBase: baseUrl,
-  };
+const metadata: Metadata = {
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+  },
+  colorScheme: "light dark",
+  themeColor: variables.colorBackgroundDarkest,
 };
 
 export default RootLayout;
-export { generateMetadata };
+export { metadata };
