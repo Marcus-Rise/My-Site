@@ -6,9 +6,9 @@ import "../styles/global.scss";
 import { Theme } from "../components/theme";
 import type { Metadata } from "next";
 import variables from "../styles/variables.module.scss";
-import { headers } from "next/headers";
 import { AnalyticsYandex } from "../analytics/yandex";
 import { Analytics } from "@vercel/analytics/react";
+import { baseUrl } from "../seo";
 
 const roboto = Roboto({
   weight: ["400", "700"],
@@ -34,20 +34,15 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => (
   </html>
 );
 
-const generateMetadata: () => Metadata = () => {
-  const host = headers().get("Host") ?? "";
-  const baseUrl = new URL(`https://${host}`);
-
-  return {
-    viewport: {
-      width: "device-width",
-      initialScale: 1,
-    },
-    colorScheme: "light dark",
-    themeColor: variables.colorBackgroundDarkest,
-    metadataBase: baseUrl,
-  };
+const metadata: Metadata = {
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+  },
+  colorScheme: "light dark",
+  themeColor: variables.colorBackgroundDarkest,
+  metadataBase: baseUrl,
 };
 
 export default RootLayout;
-export { generateMetadata };
+export { metadata };
