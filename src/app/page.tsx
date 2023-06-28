@@ -17,14 +17,13 @@ const Links = socialLinks.map(({ alt, icon, href, size }) => (
 const Skills = skills.map((value) => <Chip key={value}>{value}</Chip>);
 const SKILLS_LIMIT = 3;
 
-const text = description
-  .split("\n")
-  .filter((item) => !!item)
-  .map((item) => (
-    <p key={item} className={styles.description}>
-      {item}
-    </p>
-  ));
+const descriptionItems = description.split("\n").filter((item) => !!item);
+const shortDescription = descriptionItems.join(" ");
+const text = descriptionItems.map((item) => (
+  <p key={item} className={styles.description}>
+    {item}
+  </p>
+));
 
 const Profile: FC = () => (
   <div className={styles.card}>
@@ -43,8 +42,6 @@ const Profile: FC = () => (
     </section>
   </div>
 );
-
-const shortDescription = description.slice(0, 199);
 
 const metadata: Metadata = {
   title,
