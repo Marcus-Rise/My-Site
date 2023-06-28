@@ -13,7 +13,7 @@ const disallowRules: Rules = {
 };
 
 const robots = (): MetadataRoute.Robots => {
-  const isAllow = Boolean(process.env.ALLOW_ROBOTS);
+  const isAllow = process.env.ALLOW_ROBOTS === "true";
   const sitemap = new URL("/sitemap.xml", baseUrl).href;
 
   return {
