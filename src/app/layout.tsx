@@ -40,6 +40,7 @@ const metadata: Metadata = {
   },
   colorScheme: "light dark",
   themeColor: variables.colorBackgroundDarkest,
+  metadataBase: new URL(process.env.BASE_URL || "http://localhost:3000"),
 };
 
 export default RootLayout;
