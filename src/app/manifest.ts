@@ -1,11 +1,12 @@
 import type { MetadataRoute } from "next";
-import { title } from "../seo";
+import { description, title } from "../seo";
 import variables from "../styles/variables.module.scss";
 import icon from "./icon.png";
 
 const manifest = (): MetadataRoute.Manifest => ({
   name: title,
   short_name: title,
+  description,
   theme_color: variables.colorBackgroundDarkest,
   background_color: variables.colorBackgroundDarkest,
   display: "standalone",
