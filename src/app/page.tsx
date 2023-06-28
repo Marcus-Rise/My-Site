@@ -49,6 +49,7 @@ const metadata: Metadata = {
   keywords,
   openGraph: {
     title,
+    siteName: title,
     description: shortDescription,
     url: "/",
     type: "profile",
