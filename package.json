@@ -10,25 +10,25 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@ducanh2912/next-pwa": "^9.1.4",
+    "@ducanh2912/next-pwa": "^9.2.1",
     "@marcus-rise/react-theme": "^1.0.2",
     "@vercel/analytics": "^1.0.1",
     "classnames": "^2.3.2",
-    "next": "^13.4.8",
+    "next": "^13.4.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sharp": "^0.32.1"
+    "sharp": "^0.32.3"
   },
   "devDependencies": {
-    "@types/node": "^20.3.3",
-    "@types/react": "18.2.14",
-    "@types/react-dom": "^18.2.6",
-    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "@types/node": "^20.4.2",
+    "@types/react": "18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
     "eslint": "8.44.0",
-    "eslint-config-next": "^13.4.8",
+    "eslint-config-next": "^13.4.10",
     "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.8.8",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.0",
     "sass": "^1.63.6",
     "typescript": "^5.1.6"
   }
