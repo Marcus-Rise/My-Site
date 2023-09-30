@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "bun next dev",
-    "build": "bun next build",
-    "export": "bun next export",
-    "start": "bun next start",
-    "lint": "bun next lint"
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next export",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "@ducanh2912/next-pwa": "^9.7.1",
