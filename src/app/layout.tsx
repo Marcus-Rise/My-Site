@@ -4,11 +4,11 @@ import { Roboto } from "next/font/google";
 import classNames from "classnames";
 import "../styles/global.scss";
 import { Theme } from "../components/theme";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import variables from "../styles/variables.module.scss";
 import { AnalyticsYandex } from "../analytics/yandex";
 import { Analytics } from "@vercel/analytics/react";
-import { baseUrl } from "../seo";
+import { baseUrl, shortDescription, title } from "../seo";
 
 const roboto = Roboto({
   weight: ["400", "700"],
@@ -35,14 +35,28 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => (
 );
 
 const metadata: Metadata = {
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
+  metadataBase: baseUrl,
+
+  applicationName: title,
+  title,
+  description: shortDescription,
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title,
   },
+  formatDetection: {
+    telephone: false,
+  },
+};
+
+const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
   colorScheme: "light dark",
   themeColor: variables.colorBackgroundDarkest,
-  metadataBase: baseUrl,
 };
 
 export default RootLayout;
-export { metadata };
+export { metadata, viewport };

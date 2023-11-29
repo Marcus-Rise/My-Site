@@ -9,8 +9,10 @@ const description = `
 
 Стремлюсь постоянно изучать новые решения, которые позволят решать потребности заказчика более эффективно.
 `;
+const descriptionItems = description.split("\n").filter((item) => !!item);
+const shortDescription = descriptionItems.join(" ");
 const keywords: string[] = [...skills, ...title.split(" "), "Самара", "Web"];
 
 const baseUrl = new URL(process.env.BASE_URL || "http://localhost:3000");
 
-export { title, description, keywords, slogan, baseUrl };
+export { title, description, shortDescription, descriptionItems, keywords, slogan, baseUrl };

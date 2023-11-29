@@ -2,7 +2,7 @@ import avatar from "./opengraph-image.jpg";
 import type { FC } from "react";
 import { skills } from "../skills.array";
 import { socialLinks } from "../social-links.array";
-import { description, keywords, slogan, title } from "../seo";
+import { descriptionItems, keywords, shortDescription, slogan, title } from "../seo";
 import { Chip } from "../components/chip";
 import { Avatar } from "../components/avatar";
 import styles from "./page.module.scss";
@@ -17,8 +17,6 @@ const Links = socialLinks.map(({ alt, icon, href, size }) => (
 const Skills = skills.map((value) => <Chip key={value}>{value}</Chip>);
 const SKILLS_LIMIT = 3;
 
-const descriptionItems = description.split("\n").filter((item) => !!item);
-const shortDescription = descriptionItems.join(" ");
 const text = descriptionItems.map((item) => (
   <p key={item} className={styles.description}>
     {item}
@@ -53,6 +51,10 @@ const metadata: Metadata = {
     description: shortDescription,
     url: "/",
     type: "profile",
+  },
+  twitter: {
+    title,
+    description: shortDescription,
   },
 };
 

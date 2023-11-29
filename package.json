@@ -10,26 +10,27 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@ducanh2912/next-pwa": "^9.7.1",
+    "@ducanh2912/next-pwa": "^9.7.2",
     "@marcus-rise/react-theme": "^1.0.2",
-    "@vercel/analytics": "^1.0.2",
+    "@vercel/analytics": "^1.1.1",
     "classnames": "^2.3.2",
-    "next": "^13.5.3",
+    "next": "^14.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sharp": "^0.32.6"
   },
   "devDependencies": {
-    "@types/node": "^20.8.0",
-    "@types/react": "18.2.23",
-    "@types/react-dom": "^18.2.8",
-    "@typescript-eslint/eslint-plugin": "^6.7.3",
-    "eslint": "8.50.0",
-    "eslint-config-next": "^13.5.3",
+    "@types/node": "^20.10.0",
+    "@types/react": "18.2.39",
+    "@types/react-dom": "^18.2.17",
+    "@typescript-eslint/eslint-plugin": "^6.13.1",
+    "eslint": "8.54.0",
+    "eslint-config-next": "^14.0.3",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^5.0.0",
-    "prettier": "^3.0.3",
-    "sass": "^1.68.0",
-    "typescript": "^5.2.2"
+    "eslint-plugin-prettier": "^5.0.1",
+    "prettier": "^3.1.0",
+    "sass": "^1.69.5",
+    "typescript": "^5.3.2",
+    "webpack": "^5.89.0"
   }
 }
