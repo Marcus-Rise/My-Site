@@ -14,11 +14,11 @@
     "@ducanh2912/next-pwa": "^9.7.2",
     "@marcus-rise/react-theme": "^1.0.2",
     "@vercel/analytics": "^1.1.1",
-    "classnames": "^2.3.2",
-    "next": "^14.0.3",
+    "classnames": "^2.5.1",
+    "next": "^14.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sharp": "^0.32.6"
+    "sharp": "^0.33.1"
   },
   "devDependencies": {
     "@types/node": "^20.10.0",
