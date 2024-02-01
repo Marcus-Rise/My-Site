@@ -1,53 +1,56 @@
 import type { FC, PropsWithChildren } from "react";
-import styles from "./layout.module.scss";
 import { Roboto } from "next/font/google";
-import classNames from "classnames";
-import "../styles/global.scss";
-import { Theme } from "../components/theme";
+import "./global.css";
 import type { Metadata, Viewport } from "next";
-import variables from "../styles/variables.module.scss";
-import { AnalyticsYandex } from "../analytics/yandex";
+import { AnalyticsYandex, AnalyticsYandexReporter } from "@/analytics/yandex";
 import { Analytics } from "@vercel/analytics/react";
-import { baseUrl, shortDescription, title } from "../seo";
+import metaConfig from "@/meta-config.cjs";
+import { configFactory } from "@/config";
+import { content } from "@/content";
 
 const roboto = Roboto({
-  weight: ["400", "700"],
+  weight: ["400", "500", "700"],
   subsets: ["cyrillic", "latin"],
   variable: "--roboto",
   display: "swap",
 });
 
-const ENABLE_ANALYTICS = process.env.ANALYTICS === "true";
+const { analyticsEnable, canonicalBaseUrl } = configFactory();
 
-const RootLayout: FC<PropsWithChildren> = ({ children }) => (
-  <html lang={"ru"} className={classNames(styles.html, roboto.variable)}>
-    <body className={styles.body}>
-      <Theme />
-      <main className={styles.main}>{children}</main>
-      {ENABLE_ANALYTICS && (
-        <>
-          <Analytics />
-          <AnalyticsYandex />
-        </>
-      )}
-    </body>
-  </html>
-);
+const RootLayout: FC<PropsWithChildren> = ({ children }) => {
+  return (
+    <html lang={"ru"} className={roboto.variable}>
+      <body className={"font-sans bg-primary text-font"}>
+        {children}
+        {analyticsEnable && (
+          <>
+            <Analytics />
+            <AnalyticsYandex />
+            <AnalyticsYandexReporter />
+          </>
+        )}
+      </body>
+    </html>
+  );
+};
 
 const metadata: Metadata = {
-  metadataBase: baseUrl,
-
-  applicationName: title,
-  title,
-  description: shortDescription,
-  manifest: "/manifest.json",
+  applicationName: metaConfig.title,
+  title: metaConfig.title,
+  description: content.shortDescription,
+  keywords: content.keywords,
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title,
+    title: metaConfig.title,
   },
-  formatDetection: {
-    telephone: false,
+  metadataBase: canonicalBaseUrl,
+  openGraph: {
+    url: "/",
+    type: "profile",
+  },
+  twitter: {
+    card: "summary",
   },
 };
 
@@ -55,8 +58,13 @@ const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   colorScheme: "light dark",
-  themeColor: variables.colorBackgroundDarkest,
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: metaConfig.themeColor.dark },
+    { media: "(prefers-color-scheme: light)", color: metaConfig.themeColor.light },
+  ],
 };
+
+export const runtime = "edge";
 
 export default RootLayout;
 export { metadata, viewport };

@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: theme('colors.primary.light');
+    --color-secondary: theme('colors.secondary.light');
+    --color-background: theme('colors.background.light');
+    --color-font: theme('colors.font.light');
+    --color-skeleton: theme('colors.skeleton.light');
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-primary: theme('colors.primary.dark');
+      --color-secondary: theme('colors.secondary.dark');
+      --color-background: theme('colors.background.dark');
+      --color-font: theme('colors.font.dark');
+      --color-skeleton: theme('colors.skeleton.dark');
+    }
+  }
+}
+

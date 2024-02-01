@@ -1,10 +1,11 @@
 import type { FC } from "react";
 import Script from "next/script";
+import { analyticsYandexConfig } from "@/analytics/yandex/analytics-yandex.config";
 
 const AnalyticsYandex: FC = () => {
   return (
     <>
-      <Script id={"yandex-metric"}>
+      <Script id={"yandex-metric"} strategy={"afterInteractive"}>
         {`
         (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
    m[i].l=1*new Date();
@@ -12,7 +13,7 @@ const AnalyticsYandex: FC = () => {
    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-   ym(94103519, "init", {
+   ym(${analyticsYandexConfig.id}, "init", {
         clickmap:true,
         trackLinks:true,
         accurateTrackBounce:true,

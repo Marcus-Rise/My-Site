@@ -3,7 +3,6 @@
 import type { FC, PropsWithChildren } from "react";
 import { Children, useMemo, useState } from "react";
 import { Chip } from "../chip";
-import styles from "./chips-limited.module.scss";
 
 type ChipsLimitedProps = PropsWithChildren<{
   limit: number;
@@ -20,7 +19,7 @@ const ChipsLimited: FC<ChipsLimitedProps> = ({ limit, children }) => {
 
   const toggle = useMemo(
     () => (
-      <Chip className={styles.toggle} onClick={() => setIsOpen((open) => !open)}>
+      <Chip className={"hover:cursor-pointer"} flat onClick={() => setIsOpen((open) => !open)}>
         <b>{isOpen ? "Скрыть" : <>+{otherChildren.length}</>}</b>
       </Chip>
     ),

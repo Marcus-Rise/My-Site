@@ -1,13 +1,23 @@
-import styles from "./chip.module.scss";
 import type { FC, HTMLProps } from "react";
-import classNames from "classnames";
+import { clsx } from "clsx";
 
 type ChipProps = HTMLProps<HTMLSpanElement> & {
   className?: string;
+  flat?: boolean;
 };
 
-const Chip: FC<ChipProps> = ({ className, ...props }) => (
-  <span {...props} className={classNames(styles.chip, className)} />
+const Chip: FC<ChipProps> = ({ className, flat, ...props }) => (
+  <span
+    {...props}
+    className={clsx(
+      {
+        "bg-secondary": !flat,
+        "bg-background": flat,
+      },
+      "rounded-3xl py-2 px-3 text-sm",
+      className,
+    )}
+  />
 );
 
 export { Chip };

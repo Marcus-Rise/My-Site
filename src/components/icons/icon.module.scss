@@ -1,9 +1,6 @@
-@use "../../styles/variables.module" as v;
-
 .icon {
   path {
-    transition: stroke ease v.$transition-delay, fill ease v.$transition-delay;
-    stroke: var(--color-icon);
-    fill: var(--color-icon);
+    stroke: var(--color-font);
+    fill: var(--color-font);
   }
 }

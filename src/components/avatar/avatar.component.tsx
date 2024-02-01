@@ -1,6 +1,5 @@
 import type { FC } from "react";
 import Image from "next/image";
-import styles from "./avatar.module.scss";
 
 type AvatarProps = {
   size: number;
@@ -10,7 +9,8 @@ type AvatarProps = {
 
 const Avatar: FC<AvatarProps> = ({ alt, size, src }) => (
   <Image
-    className={styles.image}
+    className={"object-center object-cover rounded-full border-2 h-fit border-secondary"}
+    style={{ height: size }}
     alt={alt}
     height={size}
     width={size}

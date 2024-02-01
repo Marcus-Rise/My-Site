@@ -1,26 +1,41 @@
 import type { MetadataRoute } from "next";
-import { title } from "../seo";
-import variables from "../styles/variables.module.scss";
-import icon from "./icon.png";
+import metaConfig from "@/meta-config.cjs";
+import { ICON_SIZES } from "@/app/icon-sizes.constant";
 
-const manifest = (): MetadataRoute.Manifest => ({
-  name: title,
-  short_name: title,
-  description: title,
-  theme_color: variables.colorBackgroundDarkest,
-  background_color: variables.colorBackgroundDarkest,
+const icons = ICON_SIZES.flatMap((size) => {
+  const contentType = "image/png";
+  const sizes = `${size}x${size}`;
+  const srcBase = `/manifest-icon`;
+
+  return [
+    {
+      src: `${srcBase}/${size}`,
+      type: contentType,
+      sizes,
+      purpose: "any" as const,
+    },
+    {
+      src: `${srcBase}/${size}-maskable`,
+      type: contentType,
+      sizes,
+      purpose: "maskable" as const,
+    },
+  ];
+});
+
+const generateManifest = (): MetadataRoute.Manifest => ({
+  name: metaConfig.title,
+  short_name: metaConfig.title,
+  description: metaConfig.description,
+  theme_color: metaConfig.themeColor.light,
+  background_color: metaConfig.themeColor.light,
   display: "standalone",
   orientation: "portrait",
   start_url: "/",
   id: "/",
-  icons: [
-    { src: icon.src, purpose: "maskable", sizes: `${icon.height}x${icon.width}` },
-    {
-      src: icon.src,
-      purpose: "any",
-      sizes: `${icon.height}x${icon.width}`,
-    },
-  ],
+  icons,
 });
 
-export default manifest;
+export const runtime = "nodejs";
+
+export default generateManifest;
