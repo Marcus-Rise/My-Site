@@ -1,4 +1,5 @@
 import type { FC, PropsWithChildren } from "react";
+import { Suspense } from "react";
 import { Roboto } from "next/font/google";
 import "./global.css";
 import type { Metadata, Viewport } from "next";
@@ -26,7 +27,9 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
           <>
             <Analytics />
             <AnalyticsYandex />
-            <AnalyticsYandexReporter />
+            <Suspense>
+              <AnalyticsYandexReporter />
+            </Suspense>
           </>
         )}
       </body>
