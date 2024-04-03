@@ -3,7 +3,7 @@ const packageConfig = require("../package.json");
 const metaConfig = {
   title: "Илья Константинов",
   description: `
-Разрабатываю Frontend приложения с поддержкой SSR на ReactJs, также Backend решения на NodeJs (ExpressJs/NestJs), организовываю процессы CI/CD с помощью Docker, имею опыт управления командами до 7 человек, провожу собеседования.
+Разрабатываю Frontend приложения с поддержкой SSR на ReactJs, также Backend решения на NodeJs (ExpressJs/NestJs), организовываю процессы CI/CD с помощью Docker, руковожу командой разработки, провожу собеседования.
 
 Применяю трехслойную архитектуру, а также TTD, DDD и DI.
 
